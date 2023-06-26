@@ -2,9 +2,6 @@ import React from "react";
 import logoNavbar from '../../img/logo-navbar.png';
 import { Link } from 'react-router-dom';
 
-/*console.log(process.env.INSTAGRAM_API_KEY);
-console.log(`${process.env.INSTAGRAM_API_KEY}`);*/
-
 export default function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary shadow">

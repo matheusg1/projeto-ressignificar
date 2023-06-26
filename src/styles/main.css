@@ -55,3 +55,8 @@ body {
 .about-card p:nth-child(2){
     color: var(--primary-pink);
 }
+
+.iframe-custom{
+    height: 80vh;
+     width: 640px;
+}

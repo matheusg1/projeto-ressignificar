@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Feedback() {
+export default function AcompanhamentoNutricionalForm() {
     return (
         <>
             <div className="col-12 d-flex justify-content-center mt-sm-5 mt-md-5 mt-lg-5 mt-xl-5 mt-xxl-5">

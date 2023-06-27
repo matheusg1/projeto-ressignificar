@@ -16,7 +16,7 @@ export default function Navbar() {
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
                             <Link className="nav-link text-black" to="/sobre">Sobre</Link>
-                        </li>
+                        </li>                        
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -32,6 +32,9 @@ export default function Navbar() {
                                     <Link className="dropdown-item" to="/acompanhamento-nutricional" >Acompanhamento Nutricional</Link>
                                 </li>
                             </ul>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link text-black" to="/atendimento-presencial">Presencial</Link>
                         </li>
                         <li className="nav-item pe-5">
                             <Link className="nav-link text-black" to="/dar-feedback" >Dar feedback</Link>

@@ -9,10 +9,9 @@ import './styles/main.css';
 import Navbar from './components/navbar';
 
 function App() {
-  //console.log(process.env.REACT_APP_INSTAGRAM_API_KEY)
   return (
     <>
-      <Navbar />
+      <Navbar />      
       <AppRoutes />
     </>
   );

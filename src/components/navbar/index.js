@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary shadow">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-white">
             <div className="container-fluid">
                 <img id="img-logo" className="ms-lg-4" src={logoNavbar} />
                 <Link className="navbar-brand ps-4" to="/">Projeto Ressignificar</Link>
@@ -29,7 +29,7 @@ export default function Navbar() {
                                     <Link className="dropdown-item" to="/acompanhamento-psiquiatrico" >Acompanhamento psiquiátrico</Link>
                                 </li>
                                 <li>
-                                    <Link className="dropdown-item" to="/acompanhamento-nutricional" >Acompanhamento Nutricional</Link>
+                                    <Link className="dropdown-item" to="/acompanhamento-nutricional" >Acompanhamento nutricional</Link>
                                 </li>
                             </ul>
                         </li>

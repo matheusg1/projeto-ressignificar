@@ -16,6 +16,7 @@
     */
     overflow: hidden;
     transition: 0.4s;
+    background-color: white;
   }
   
   .item img, video {

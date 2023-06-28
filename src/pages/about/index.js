@@ -2,6 +2,7 @@ import React from "react";
 import imgMayara from "../../img/mayara-img.webp"
 import imgLilian from "../../img/lilian-img.webp"
 import FadeAnimation from "../../components/fadeAnimation";
+import TitleComponent from '../../components/titleComponent';
 
 export default function About() {
     return (
@@ -9,9 +10,7 @@ export default function About() {
             <FadeAnimation />
             <div className="fade">
                 <div className="container-md py-3">
-                    <h1 className="display-1 about-heading mt-2 mb-lg-5 mb-xl-5 mb-xxl-5">
-                        Sobre o projeto
-                    </h1>
+                <TitleComponent title="Sobre nós"/>
                     <div
                         className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row p-3 glass">
                         <h2 className="fs-2 fw-bold about-topic">Objetivo</h2>

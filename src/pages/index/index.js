@@ -1,15 +1,16 @@
 import React from 'react';
 import Instafeed from '../../components/instafeedComponent';
 import FadeAnimation from '../../components/fadeAnimation';
+import TitleComponent from '../../components/titleComponent';
 
 export default function Index() {
 
     return (
         <>
             <div className="container-md py-3">
-                <h1 className="display-1 about-heading mt-2">Últimas postagens</h1>
+                <TitleComponent title="Nossas postagens..."/>                
             </div>
-            <div id="instafeed" className="mt-md-2 mt-lg-5 mt-xl-5 mt-xxl-5"></div>
+            <div id="instafeed" className="mt-md-2g mt-xl-5 mt-xxl-5"></div>
             <Instafeed />
         </>
     )

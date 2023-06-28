@@ -18,10 +18,14 @@
 body {
     font-family: 'Poppins', sans-serif !important;
     cursor: default;
+    min-height: 100vh;
+    background: rgb(255, 239, 238);
+    background: linear-gradient(45deg, rgba(255, 239, 238, 1) 0%, rgba(174, 229, 226, 1) 25%, rgba(174, 229, 226, 1) 75%, rgba(249, 241, 164, 0.835171568627451) 100%);
 }
 
 ::selection {
-    background: #AEE5E2;
+    /*background: #AEE5E2;*/
+    background: var(--secondary-pink);
 }
 
 .navbar {
@@ -54,7 +58,6 @@ body {
 
 .about-heading {
     color: var(--primary-blue);
-    font-weight: 800;
 }
 
 .about-topic {
@@ -102,10 +105,4 @@ body {
 
 .gradient-yellow {
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 1)), var(--secondary-yellow);
-}
-
-body {
-    min-height: 100vh;
-    background: rgb(255, 239, 238);
-    background: linear-gradient(45deg, rgba(255, 239, 238, 1) 0%, rgba(174, 229, 226, 1) 25%, rgba(174, 229, 226, 1) 75%, rgba(249, 241, 164, 0.835171568627451) 100%);
 }

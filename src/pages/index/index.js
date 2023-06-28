@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-//import Instafeed from './instafeed.min.j';
+import React from 'react';
 import Instafeed from '../../components/instafeedComponent';
 import FadeAnimation from '../../components/fadeAnimation';
 

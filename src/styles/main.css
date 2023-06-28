@@ -35,7 +35,14 @@ body {
 }
 
 .navbar-brand {
+    color: var(--primary-blue);
     font-weight: 400;
+}
+
+
+.nav-link{
+    font-weight: 400;
+    color: var(--primary-blue);
 }
 
 #img-logo {

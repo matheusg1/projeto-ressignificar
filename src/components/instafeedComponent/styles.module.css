@@ -10,9 +10,10 @@
     gap: 1.5rem;
     padding: 1rem;
   }
-  
   .item {
+    /*
     border-radius: 1rem;
+    */
     overflow: hidden;
     transition: 0.4s;
   }

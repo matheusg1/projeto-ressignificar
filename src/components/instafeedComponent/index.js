@@ -18,7 +18,7 @@ export default function InstaFeed() {
 
     useEffect(() => {
         getInstaFeed();
-    }, []);    
+    }, []);
 
     /*
     return (
@@ -39,26 +39,34 @@ export default function InstaFeed() {
             {feedList.map(item => {
                 if (item.media_type === "IMAGE") {
                     return (
-                        <a key={item.id} href={item.permalink} target="_blank" className={styles.item}>
-                            <img src={item.media_url} />
-                            <p>{item.caption}</p>                            
-                        </a>
+                        <>
+                            <div className={`${styles.item} rounded-3 shadow`}>
+                                <a key={item.id} href={item.permalink} target="_blank">
+                                    <img src={item.media_url} />
+                                </a>
+                                <p className="fs-5 pt-4 ps-3">{item.caption}</p>
+                            </div>
+                        </>
                     );
                 } else if (item.media_type === "VIDEO") {
                     return (
                         <a key={item.id} href={item.permalink} target="_blank" className={styles.item}>
                             <video controls>
                                 <source src={item.media_url}></source>
-                                <p>{item.caption}</p>                            
+                                <p>{item.caption}</p>
                             </video>
                         </a>
                     );
-                } else /*if (item.media_type === "CAROUSEL_ALBUM")*/{
+                } else /*if (item.media_type === "CAROUSEL_ALBUM")*/ {
                     return (
-                        <a key={item.id} href={item.permalink} target="_blank" className={styles.item}>
-                            <img src={item.media_url} />
-                            <p>{item.caption}</p>                            
-                        </a>
+                        <>
+                            <div className={`${styles.item} rounded-3 shadow`}>
+                                <a key={item.id} href={item.permalink} target="_blank" >
+                                    <img src={item.media_url} />
+                                </a>
+                                <p class="pt-4">{item.caption}</p>
+                            </div>
+                        </>
                     );
                 }
             })}

@@ -10,7 +10,7 @@ export default function Index() {
             <div className="container-md py-3">
                 <h1 className="display-1 about-heading mt-2">Últimas postagens</h1>
             </div>
-            <div id="instafeed" className="mt-md-2 mt-lg-5 mt-xl-5 mt-xxl-5 owl-carousel owl-theme owl-loaded owl-drag"></div>
+            <div id="instafeed" className="mt-md-2 mt-lg-5 mt-xl-5 mt-xxl-5"></div>
             <Instafeed />
         </>
     )

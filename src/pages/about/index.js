@@ -8,15 +8,15 @@ export default function About() {
         <>
             <FadeAnimation />
             <div className="fade">
-                <div className="container-md py-3 ">
-                    <h1 className="display-1 about-heading mt-2 mb-5">
+                <div className="container-md py-3">
+                    <h1 className="display-1 about-heading mt-2 mb-lg-5 mb-xl-5 mb-xxl-5">
                         Sobre o projeto
                     </h1>
                     <div
-                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row py-3">
+                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row p-3 ">
                         <h2 className="fs-2 about-topic">Objetivo</h2>
                         <div className="d-md-block fs-5 w-75 about-topic-content">
-                            <p className="my-3">O objetivo do projeto Ressignificar é proporcionar acesso a atendimentos psicológicos de
+                            <p className="">O objetivo do projeto Ressignificar é proporcionar acesso a atendimentos psicológicos de
                                 acordo com as
                                 condições socioeconômicas de cada paciente. Assim sendo, o projeto vem com o intuito de facilitar o acesso à
                                 atendimentos psicológicos, tornando possível a oportunidade de cuidar da saúde mental.
@@ -30,14 +30,14 @@ export default function About() {
                         </div>
                     </div>
                     <div
-                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row py-3">
+                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-4 p-3 ">
                         <div>
                             <h2 className="fs-2 about-topic">Como</h2>
                             <h2 className="fs-2 about-topic">o projeto</h2>
                             <h2 className="fs-2 about-topic">iniciou?</h2>
                         </div>
                         <div className="d-md-block fs-5 w-75 about-topic-content">
-                            <p className="my-3">
+                            <p className="">
                                 A ideia do projeto iniciou-se devido à pandemia de COVID-19. Em contexto de pandemia, houve o aumento do
                                 sofrimento psíquico na população. Com a necessidade do isolamento social, os medos e incertezas trazidos por
                                 este momento, a rápida disseminação do vírus e o desemprego, se fez necessário maior cuidado com a saúde
@@ -48,14 +48,14 @@ export default function About() {
                     </div>
 
                     <div
-                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row py-3">
+                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-4 p-3 ">
                         <div>
                             <h2 className="fs-2 about-topic">Como</h2>
                             <h2 className="fs-2 about-topic">funciona?</h2>
                         </div>
 
                         <div className="d-md-block fs-5 w-75 about-topic-content">
-                            <p className="my-3">O projeto inicialmente se dará por meio do preenchimento de um formulário, que será
+                            <p className="">O projeto inicialmente se dará por meio do preenchimento de um formulário, que será
                                 disponibilizado nas redes sociais do projeto estando disponível para que o público possa preenchê-lo, nele
                                 conterão dados de identificação, escolaridade, condições socioeconômica e valor disponível por sessão. Após o
                                 preenchimento do formulário, um profissional do projeto entrará em contato no prazo de 72hrs.

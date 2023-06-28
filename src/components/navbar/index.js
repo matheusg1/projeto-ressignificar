@@ -34,7 +34,7 @@ export default function Navbar() {
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-black" to="/atendimento-presencial">Presencial</Link>
+                            <Link className="nav-link text-black" to="/atendimento-presencial">Atendimento presencial</Link>
                         </li>
                         <li className="nav-item pe-5">
                             <Link className="nav-link text-black" to="/dar-feedback" >Dar feedback</Link>

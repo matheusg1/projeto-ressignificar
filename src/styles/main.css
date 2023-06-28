@@ -26,22 +26,25 @@ body {
 
 .navbar {
     /*background-color: var(--secondary-blue) !important;*/
-    /*background-color: transparent !important;*/
-    font-weight: 500 !important;
-    /* From https://css.glass */
+    /*background-color: transparent !important;*/    
     background: rgba(255, 255, 255, 0.2) !important;
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
 }
 
+.glass {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)) no-repeat left center;
+    backdrop-filter: blur(16.8px);
+    -webkit-backdrop-filter: blur(16.8px);
+    border-radius: 5px;
+}
+
 .navbar-brand {
-    color: var(--primary-blue);
-    font-weight: 400;
+    color: var(--primary-blue);    
 }
 
 
-.nav-link{
-    font-weight: 400;
+.nav-link {    
     color: var(--primary-blue);
 }
 
@@ -64,12 +67,15 @@ body {
 }
 
 .about-card {
-    background-color: var(--secondary-pink);
-    font-weight: 800;
+    background: rgba(255, 255, 255, 0.2);    
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .about-card p:nth-child(2) {
-    color: var(--primary-pink);
+    /*color: var(--primary-blue);*/
 }
 
 .iframe-custom {
@@ -99,6 +105,7 @@ body {
 }
 
 body {
-    background: rgb(255,239,238);
-    background: linear-gradient(45deg, rgba(255,239,238,1) 0%, rgba(174,229,226,1) 25%, rgba(174,229,226,1) 75%, rgba(249,241,164,0.835171568627451) 100%);
+    min-height: 100vh;
+    background: rgb(255, 239, 238);
+    background: linear-gradient(45deg, rgba(255, 239, 238, 1) 0%, rgba(174, 229, 226, 1) 25%, rgba(174, 229, 226, 1) 75%, rgba(249, 241, 164, 0.835171568627451) 100%);
 }

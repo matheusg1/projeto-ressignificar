@@ -13,8 +13,8 @@ export default function About() {
                         Sobre o projeto
                     </h1>
                     <div
-                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row p-3 ">
-                        <h2 className="fs-2 about-topic">Objetivo</h2>
+                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row p-3 glass">
+                        <h2 className="fs-2 fw-bold about-topic">Objetivo</h2>
                         <div className="d-md-block fs-5 w-75 about-topic-content">
                             <p className="">O objetivo do projeto Ressignificar é proporcionar acesso a atendimentos psicológicos de
                                 acordo com as
@@ -30,11 +30,11 @@ export default function About() {
                         </div>
                     </div>
                     <div
-                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-4 p-3 ">
+                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-4 p-3 glass">
                         <div>
-                            <h2 className="fs-2 about-topic">Como</h2>
-                            <h2 className="fs-2 about-topic">o projeto</h2>
-                            <h2 className="fs-2 about-topic">iniciou?</h2>
+                            <h2 className="fs-2 fw-bold about-topic">Como</h2>
+                            <h2 className="fs-2 fw-bold about-topic">o projeto</h2>
+                            <h2 className="fs-2 fw-bold about-topic">iniciou?</h2>
                         </div>
                         <div className="d-md-block fs-5 w-75 about-topic-content">
                             <p className="">
@@ -48,10 +48,10 @@ export default function About() {
                     </div>
 
                     <div
-                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-4 p-3 ">
+                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-4 p-3 glass">
                         <div>
-                            <h2 className="fs-2 about-topic">Como</h2>
-                            <h2 className="fs-2 about-topic">funciona?</h2>
+                            <h2 className="fs-2 fw-bold about-topic">Como</h2>
+                            <h2 className="fs-2 fw-bold about-topic">funciona?</h2>
                         </div>
 
                         <div className="d-md-block fs-5 w-75 about-topic-content">
@@ -78,18 +78,24 @@ export default function About() {
                     className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-5 mx-auto col-sm-12 col-md-11 col-lg-11 col-xl-10 col-xxl-8">
                     <div className="py-4 px-3 d-flex flex-column col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-4 about-card">
                         <img className="rounded-circle align-self-center mb-3" width="189px" src={imgMayara} />
-                        <p>Mayara de Sousa dos S. Machado CRP 08/28214</p>
-                        <p>Idealizadora e coordenadora</p>
-                        <p>Formada em psicologia desde 2018, atuando na clinica desde então. Fundou o Projeto Ressignificar por acreditar
+                        <div className="border-start border-dark ps-3">
+                            <p className="fw-semibold mb-0">Mayara de Sousa dos S. Machado </p>
+                            <p className="fw-medium mb-0">CRP 08/28214</p>
+                            <p className="fw-medium mb-0">Idealizadora e coordenadora</p>
+                        </div>
+                        <p className="mt-3 ps-2">Formada em psicologia desde 2018, atuando na clinica desde então. Fundou o Projeto Ressignificar por acreditar
                             no valor e na importância da psicologia.</p>
                     </div>
 
                     <div
                         className="py-4 px-3 my-5 my-sm-0 my-md-0 my-lg-0 my-xl-0 my-xxl-0 d-flex flex-column col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-4 about-card rounded-0">
                         <img className="rounded-circle align-self-center mb-3" width="189px" src={imgLilian} />
-                        <p>Lilian de Carvalho Mailkut CRP 08/28674</p>
-                        <p>Idealizadora e coordenadora</p>
-                        <p>Formada em psicologia desde 2018, atuando na clinica desde então. Fundou o Projeto Ressignificar com o intuito
+                        <div className="border-start border-dark ps-3">
+                            <p className="fw-semibold mb-0">Lilian de Carvalho Mailkut</p>
+                            <p className="fw-medium mb-0">CRP 08/28674</p>
+                            <p className="fw-medium mb-0" >Idealizadora e coordenadora</p>
+                        </div>
+                        <p className="mt-3 ps-2">Formada em psicologia desde 2018, atuando na clinica desde então. Fundou o Projeto Ressignificar com o intuito
                             de levar a psicologia para todos, independente das condições socioeconômicas.</p>
                     </div>
 

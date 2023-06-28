@@ -6,7 +6,7 @@ export default function AtendimentoPresencial() {
         <>
             <FadeAnimation />
             <div className="fade">
-                <div className="container-md py-3 vh-100">
+                <div className="container-md py-3">
                     <h1 className="display-1 about-heading mt-2 mb-5">
                         Atendimento presencial
                     </h1>

@@ -1,12 +1,14 @@
 import React from "react";
 import imgMayara from "../../img/mayara-img.webp"
 import imgLilian from "../../img/lilian-img.webp"
-import FadeAnimation from "../../components/fadeAnimation";
+import FadeAnimation from "../../components/fadeComponent";
 import TitleComponent from '../../components/titleComponent';
+import HelmetComponent from "../../components/helmetComponent";
 
 export default function About() {
     return (
         <>
+        <HelmetComponent title="Sobre nós"/>
             <FadeAnimation />
             <div className="fade">
                 <div className="container-md py-3">

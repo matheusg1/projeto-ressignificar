@@ -3,7 +3,7 @@ import logoNavbar from '../../img/logo-navbar.png';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
-    return (
+    return (                
         <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-white">
             <div className="container-fluid">
                 <img id="img-logo" className="ms-lg-4" src={logoNavbar} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import About from './pages/about';
-import Feedback from './pages/feedback';
+import Feedback from './pages/dar-feedback';
 import Index from './pages/index';
 import AcompanhamentoPsicologicoForm from './pages/acompanhamento-psicologico';
 import AcompanhamentoPsiquiatricoForm from './pages/acompanhamento-psiquiatrico';

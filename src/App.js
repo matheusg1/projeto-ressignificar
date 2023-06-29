@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './App.css';
 //import './assets/css/owl.carousel.min.css';
 import './styles/main.css';
-import Navbar from './components/navbar';
+import Navbar from './components/navbarComponent';
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-export default function FadeAnimation() {
+export default function Fade() {
     useEffect(() => {
       const target = document.querySelectorAll('.fade');
       const animationClass = 'animate';

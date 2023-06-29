@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import FadeAnimation from '../../components/fadeAnimation';
+import FadeAnimation from '../../components/fadeComponent';
 import TitleComponent from '../../components/titleComponent';
-
+import HelmetComponent from '../../components/helmetComponent';
 export default function AtendimentoPresencial() {
     return (
         <>
+        <HelmetComponent title="Atendimento Presencial"/>
             <FadeAnimation />
             <div className="fade">
                 <div className="container-md py-3">

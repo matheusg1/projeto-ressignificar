@@ -8,9 +8,7 @@ export default function Index() {
     return (
         <>
             <HelmetComponent title="Início" />
-            <div className="container-md py-3 ">
-                <Title title="Nossas postagens..." />
-            </div>
+            <Title title="Nossas postagens..." />
             <div id="instafeed" className=""></div>
             <Instafeed />
         </>

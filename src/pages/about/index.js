@@ -8,11 +8,11 @@ import HelmetComponent from "../../components/helmetComponent";
 export default function About() {
     return (
         <>
-        <HelmetComponent title="Sobre nós"/>
+            <HelmetComponent title="Sobre nós" />
             <FadeAnimation />
             <div className="fade">
+            <TitleComponent title="Sobre nós" />
                 <div className="container-md py-3">
-                <TitleComponent title="Sobre nós"/>
                     <div
                         className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row p-3 glass">
                         <h2 className="fs-2 fw-bold about-topic">Objetivo</h2>

@@ -5,11 +5,11 @@ import HelmetComponent from '../../components/helmetComponent';
 export default function AtendimentoPresencial() {
     return (
         <>
-        <HelmetComponent title="Atendimento Presencial"/>
+            <HelmetComponent title="Atendimento Presencial" />
             <FadeAnimation />
             <div className="fade">
+            <TitleComponent title="Atendimento presencial" />
                 <div className="container-md py-3">
-                    <TitleComponent title="Atendimento presencial"/>
                     <div className="fs-5 ">
                         <div className="fs-5  p-2 d-block gradient-yellow">Campo Mourão (acima de 06 anos)</div>
                         <p className="fs-5 p-2 d-block">Terra Boa (acima de 06 anos)</p>

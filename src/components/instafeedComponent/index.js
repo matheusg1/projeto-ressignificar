@@ -13,19 +13,18 @@ export default function InstaFeed() {
                 return legenda.slice(0, tamanhoMaximo) + '...';
             }
         }
-                
+
         return legenda;
     }
 
     const [feedList, setFeedList] = useState([]);
-    console.log(feedList)
+
     async function getInstaFeed() {
         const token = process.env.REACT_APP_INSTAGRAM_API_KEY;
         const fields = "media_url,media_type,permalink,caption,children";
         const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=${fields}&limit=12`;
 
-        const { data } = await axios.get(url);
-        console.log(data)
+        const { data } = await axios.get(url);        
         setFeedList(data.data);
     }
 
@@ -53,7 +52,7 @@ export default function InstaFeed() {
                             <a key={item.id} href={item.permalink} target="_blank" className={styles.item}>
                                 <video controls>
                                     <source src={item.media_url}></source>
-                                    <p className="fs-6 pt-4 ps-3">{abreviaLegenda(item.caption)}</p>
+                                    <p className="fs-6 fw-medium pt-4 ps-2">{abreviaLegenda(item.caption)}</p>
                                 </video>
                             </a>
                         </div>
@@ -65,7 +64,7 @@ export default function InstaFeed() {
                                 <a key={item.id} href={item.permalink} target="_blank" >
                                     <img src={item.media_url} />
                                 </a>
-                                <p class=" pt-4">{abreviaLegenda(item.caption)}</p>
+                                <p class="fs-6 fw-medium pt-4 ps-2">{abreviaLegenda(item.caption)}</p>
                             </div>
                         </>
                     );

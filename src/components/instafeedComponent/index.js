@@ -4,6 +4,19 @@ import styles from './styles.module.css';
 
 export default function InstaFeed() {
 
+    function abreviaLegenda(legenda) {
+
+        const tamanhoMaximo = 190;
+
+        if (legenda != null) {
+            if (legenda.length > tamanhoMaximo) {
+                return legenda.slice(0, tamanhoMaximo) + '...';
+            }
+        }
+                
+        return legenda;
+    }
+
     const [feedList, setFeedList] = useState([]);
     console.log(feedList)
     async function getInstaFeed() {
@@ -20,20 +33,6 @@ export default function InstaFeed() {
         getInstaFeed();
     }, []);
 
-    /*
-    return (
-      <section className={styles.container}>
-        {feedList.map(item => (
-          <a key={item.id} href={item.permalink} target="_blank" className={styles.item}>
-            {item.media_type === "IMAGE" ? <img src={item.media_url} /> : (
-              <video controls>
-                <source src={item.media_url}></source>
-              </video>
-            )}
-          </a>
-        ))}
-      </section>
-    );*/
     return (
         <section className={styles.container}>
             {feedList.map(item => {
@@ -44,18 +43,20 @@ export default function InstaFeed() {
                                 <a key={item.id} href={item.permalink} target="_blank">
                                     <img src={item.media_url} />
                                 </a>
-                                <p className="fs-5 pt-4 ps-3">{item.caption}</p>
+                                <p className="fs-6 fw-medium pt-4 ps-2">{abreviaLegenda(item.caption)}</p>
                             </div>
                         </>
                     );
                 } else if (item.media_type === "VIDEO") {
                     return (
-                        <a key={item.id} href={item.permalink} target="_blank" className={styles.item}>
-                            <video controls>
-                                <source src={item.media_url}></source>
-                                <p>{item.caption}</p>
-                            </video>
-                        </a>
+                        <div className={`${styles.item} rounded-3 shadow`}>
+                            <a key={item.id} href={item.permalink} target="_blank" className={styles.item}>
+                                <video controls>
+                                    <source src={item.media_url}></source>
+                                    <p className="fs-6 pt-4 ps-3">{abreviaLegenda(item.caption)}</p>
+                                </video>
+                            </a>
+                        </div>
                     );
                 } else /*if (item.media_type === "CAROUSEL_ALBUM")*/ {
                     return (
@@ -64,7 +65,7 @@ export default function InstaFeed() {
                                 <a key={item.id} href={item.permalink} target="_blank" >
                                     <img src={item.media_url} />
                                 </a>
-                                <p class="pt-4">{item.caption}</p>
+                                <p class=" pt-4">{abreviaLegenda(item.caption)}</p>
                             </div>
                         </>
                     );

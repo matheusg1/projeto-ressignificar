@@ -13,7 +13,7 @@ export default function About() {
             <FadeAnimation />
             <div className="fade">
                 <TitleComponent title="Sobre nós" />
-                <div className="container-md py-3">
+                <div className="container-md pb-3">
                     <div
                         className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row pt-3 pb-1 px-3 glass">
                         <h2 className="fs-2 fw-bold about-topic pe-5 me-5 w-25">Objetivo</h2>

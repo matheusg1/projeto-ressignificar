@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from './styles.module.css';
+import InstagramPost from '../instagramPostComponent';
 
 export default function InstaFeed() {
 
@@ -18,12 +19,16 @@ export default function InstaFeed() {
         return legenda;
     }
 
+    function removeContrabarra(text) {
+        return text.replace(/\\/g, '');
+    }
+
     const [feedList, setFeedList] = useState([]);
 
     async function getInstaFeed() {
         const token = process.env.REACT_APP_INSTAGRAM_API_KEY;
         const fields = "media_url,media_type,permalink,caption,children";
-        const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=${fields}&limit=15`;
+        const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=${fields}&children&limit=15`;
 
         const { data } = await axios.get(url);
         setFeedList(data.data);
@@ -38,23 +43,11 @@ export default function InstaFeed() {
             {feedList.map(item => {
                 if (item.media_type === "IMAGE") {
                     return (
-                        <>
-                            <div className={`${styles.item} rounded-3 shadow`}>
-                                <a key={item.id} href={item.permalink} target="_blank">
-                                    <img src={item.media_url} />
-                                </a>
-                                <div className='d-flex flex-column px-2'>
-                                    <a key={item.id} href={item.permalink} target="_blank">
-                                        <p className="fs-6 fw-semibold my-3 text-black">Projeto Ressignificar</p>
-                                    </a>
-                                    <p className="fs-6 fw-normal">{abreviaLegenda(item.caption)}</p>
-                                </div>
-                            </div>
-                        </>
+                        <InstagramPost post={item} />
                     );
                 } else if (item.media_type === "VIDEO") {
                     return (
-                        <div className={`${styles.item} rounded-3 shadow`}>
+                        <div className={`${styles.item} rounded-3 shadow text-center`}>
                             <a key={item.id} href={item.permalink} target="_blank" className={styles.item}>
                                 <video controls>
                                     <source src={item.media_url}></source>
@@ -66,6 +59,17 @@ export default function InstaFeed() {
                 } else /*if (item.media_type === "CAROUSEL_ALBUM")*/ {
                     return (
                         <>
+                            {
+                                console.log(item.children.data)
+                            }
+                            
+                            {
+                                item.children.data.forEach(element => {
+
+                                    console.log(element.id)
+                                })
+
+                            }
                             <div className={`${styles.item} rounded-3 shadow`}>
                                 <a key={item.id} href={item.permalink} target="_blank" >
                                     <img src={item.media_url} />

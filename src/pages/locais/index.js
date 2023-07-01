@@ -2,22 +2,24 @@ import { useEffect, useState } from 'react';
 import Fade from '../../components/fadeComponent';
 import TitleComponent from '../../components/titleComponent';
 import HelmetComponent from '../../components/helmetComponent';
+import ItemLocalAtendimento from '../../components/itemLocalAtendimentoPresencial';
+
 export default function AtendimentoPresencial() {
     return (
         <>
             <HelmetComponent title="Locais" />
             <Fade />
             <div className="fade">
-            <TitleComponent title="Locais com atendimento presencial"/>
-                <div className="container-md py-3">
-                    <div className="fs-5">
-                        <p className="fs-5 p-2 glass">Campo Mourão (acima de 06 anos)</p>
-                        <p className="fs-5 p-2">Terra Boa (acima de 06 anos)</p>
-                        <p className="fs-5 p-2">Maringá (acima de 12 anos)</p>
-                        <p className="fs-5 p-2 d-block">Mamborê (acima de 06 anos)</p>
-                        <p className="fs-5 p-2 d-block gradient-pink">Londrina (acima de 06 anos)</p>
-                        <p className="fs-5 p-2 d-block gradient-yellow">Barbosa Ferraz (acima de 06 anos)</p>
-                        <p className="fs-5 p-2 d-block gradient-blue">Corumbataí (acima de 12 anos)</p>
+                <TitleComponent title="Locais com atendimento presencial" />
+                <div className="container-md pb-3">
+                    <div className="display-6">
+                        <ItemLocalAtendimento local="Campo Mourão" idadeMinima="acima de 06 anos" />
+                        <ItemLocalAtendimento local="Terra Boa" idadeMinima="acima de 06 anos" />
+                        <ItemLocalAtendimento local="Maringá" idadeMinima="acima de 12 anos" />
+                        <ItemLocalAtendimento local="Mamborê" idadeMinima="acima de 06 anos" />
+                        <ItemLocalAtendimento local="Londrina" idadeMinima="acima de 06 anos" />
+                        <ItemLocalAtendimento local="Barbosa Ferraz" idadeMinima="acima de 06 anos" />
+                        <ItemLocalAtendimento local="Corumbataí" idadeMinima="acima de 12 anos" />
                     </div>
                 </div>
             </div>

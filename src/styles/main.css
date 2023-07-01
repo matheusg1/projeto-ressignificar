@@ -19,8 +19,9 @@ body {
     font-family: 'Poppins', sans-serif !important;
     cursor: default;
     min-height: 100vh;
-    background: rgb(255, 239, 238);
-    background: linear-gradient(45deg, rgba(255, 239, 238, 1) 0%, rgba(174, 229, 226, 1) 25%, rgba(174, 229, 226, 1) 75%, rgba(249, 241, 164, 0.835171568627451) 100%);
+
+    background: rgb(255,239,238);
+    background: linear-gradient(45deg, rgba(255,239,238,1) 0%, rgba(174,229,226,1) 25%, rgba(174,229,226,1) 85%, rgba(255,249,190,1) 100%);
 }
 
 ::selection {

@@ -19,10 +19,6 @@ export default function InstaFeed() {
         return legenda;
     }
 
-    function removeContrabarra(text) {
-        return text.replace(/\\/g, '');
-    }
-
     const [feedList, setFeedList] = useState([]);
 
     async function getInstaFeed() {
@@ -58,18 +54,8 @@ export default function InstaFeed() {
                     );
                 } else /*if (item.media_type === "CAROUSEL_ALBUM")*/ {
                     return (
+                        
                         <>
-                            {
-                                console.log(item.children.data)
-                            }
-                            
-                            {
-                                item.children.data.forEach(element => {
-
-                                    console.log(element.id)
-                                })
-
-                            }
                             <div className={`${styles.item} rounded-3 shadow`}>
                                 <a key={item.id} href={item.permalink} target="_blank" >
                                     <img src={item.media_url} />

@@ -6,7 +6,7 @@ import Index from './pages/index';
 import AcompanhamentoPsicologicoForm from './pages/acompanhamento-psicologico';
 import AcompanhamentoPsiquiatricoForm from './pages/acompanhamento-psiquiatrico';
 import AcompanhamentoNutricionalForm from './pages/acompanhamento-nutricional';
-import AtendimentoPresencial from './pages/atendimento-presencial';
+import AtendimentoPresencial from './pages/locais';
 
 export default function AppRoutes() {
     return (

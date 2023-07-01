@@ -4,6 +4,7 @@ import imgLilian from "../../img/lilian-img.webp"
 import FadeAnimation from "../../components/fadeComponent";
 import TitleComponent from '../../components/titleComponent';
 import HelmetComponent from "../../components/helmetComponent";
+import CardIdealizadora from "../../components/cardIdealizadoraComponent";
 
 export default function About() {
     return (
@@ -11,12 +12,12 @@ export default function About() {
             <HelmetComponent title="Sobre nós" />
             <FadeAnimation />
             <div className="fade">
-            <TitleComponent title="Sobre nós" />
+                <TitleComponent title="Sobre nós" />
                 <div className="container-md py-3">
                     <div
-                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row p-3 glass">
-                        <h2 className="fs-2 fw-bold about-topic">Objetivo</h2>
-                        <div className="d-md-block fs-5 w-75 about-topic-content">
+                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row pt-3 pb-1 px-3 glass">
+                        <h2 className="fs-2 fw-bold about-topic pe-5 me-5 w-25">Objetivo</h2>
+                        <div className="d-md-block fs-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0 my-xxl-0 w-100 about-topic-content">
                             <p className="">O objetivo do projeto Ressignificar é proporcionar acesso a atendimentos psicológicos de
                                 acordo com as
                                 condições socioeconômicas de cada paciente. Assim sendo, o projeto vem com o intuito de facilitar o acesso à
@@ -32,12 +33,12 @@ export default function About() {
                     </div>
                     <div
                         className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-4 p-3 glass">
-                        <div>
+                        <div className="w-25 pe-5 me-5">
                             <h2 className="fs-2 fw-bold about-topic">Como</h2>
-                            <h2 className="fs-2 fw-bold about-topic">o projeto</h2>
+                            <h2 className="fs-2 fw-bold about-topic text-nowrap">o projeto</h2>
                             <h2 className="fs-2 fw-bold about-topic">iniciou?</h2>
                         </div>
-                        <div className="d-md-block fs-5 w-75 about-topic-content">
+                        <div className="d-md-block fs-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0 my-xxl-0 w-100 about-topic-content">
                             <p className="">
                                 A ideia do projeto iniciou-se devido à pandemia de COVID-19. Em contexto de pandemia, houve o aumento do
                                 sofrimento psíquico na população. Com a necessidade do isolamento social, os medos e incertezas trazidos por
@@ -50,12 +51,12 @@ export default function About() {
 
                     <div
                         className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-4 p-3 glass">
-                        <div>
+                        <div className="w-25 pe-5 me-5">
                             <h2 className="fs-2 fw-bold about-topic">Como</h2>
                             <h2 className="fs-2 fw-bold about-topic">funciona?</h2>
                         </div>
 
-                        <div className="d-md-block fs-5 w-75 about-topic-content">
+                        <div className="d-md-block fs-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0 my-xxl-0 w-100 about-topic-content">
                             <p className="">O projeto inicialmente se dará por meio do preenchimento de um formulário, que será
                                 disponibilizado nas redes sociais do projeto estando disponível para que o público possa preenchê-lo, nele
                                 conterão dados de identificação, escolaridade, condições socioeconômica e valor disponível por sessão. Após o
@@ -65,41 +66,34 @@ export default function About() {
                                 tratamento
                                 psicoterápico varia consideravelmente dependendo da pessoa e da natureza das questões a serem trabalhadas. De
                                 qualquer forma, saiba que, em hipótese alguma, você será instado a continuar no processo caso decida que é
-                                hora de sair, ou caso eu perceba que não há mais benefícios a serem colhidos.
+                                hora de sair, ou caso perceba que não há mais benefícios a serem colhidos.
                             </p>
                             <p className="my-3">
-                                Contamos com vários psicólogos, oferecemos atendimento online em todo Brasil e atendimento presencial em Campo
-                                Mourão, Maringá e Terra Boa.
+                                Contamos com vários psicólogos, oferecemos atendimento online em todo Brasil e presencial em Campo
+                                Mourão, Maringá, Terra Boa, Mamborê, Londrina, Barbosa Ferraz e Corumbataí.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <div
-                    className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-5 mx-auto col-sm-12 col-md-11 col-lg-11 col-xl-10 col-xxl-8">
-                    <div className="py-4 px-3 d-flex flex-column col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-4 about-card">
-                        <img className="rounded-circle align-self-center mb-3" width="189px" src={imgMayara} />
-                        <div className="border-start border-dark ps-3">
-                            <p className="fw-semibold mb-0">Mayara de Sousa dos S. Machado </p>
-                            <p className="fw-medium mb-0">CRP 08/28214</p>
-                            <p className="fw-medium mb-0">Idealizadora e coordenadora</p>
-                        </div>
-                        <p className="mt-3 ps-2">Formada em psicologia desde 2018, atuando na clinica desde então. Fundou o Projeto Ressignificar por acreditar
-                            no valor e na importância da psicologia.</p>
-                    </div>
+                    className="d-flex justify-content-between flex-column flex-sm-column align-items-sm-center align-items-md-stretch flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-5 mx-auto col-sm-12 col-md-11 col-lg-11 col-xl-10 col-xxl-8">
 
-                    <div
-                        className="py-4 px-3 my-5 my-sm-0 my-md-0 my-lg-0 my-xl-0 my-xxl-0 d-flex flex-column col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-4 about-card rounded-0">
-                        <img className="rounded-circle align-self-center mb-3" width="189px" src={imgLilian} />
-                        <div className="border-start border-dark ps-3">
-                            <p className="fw-semibold mb-0">Lilian de Carvalho Mailkut</p>
-                            <p className="fw-medium mb-0">CRP 08/28674</p>
-                            <p className="fw-medium mb-0" >Idealizadora e coordenadora</p>
-                        </div>
-                        <p className="mt-3 ps-2">Formada em psicologia desde 2018, atuando na clinica desde então. Fundou o Projeto Ressignificar com o intuito
-                            de levar a psicologia para todos, independente das condições socioeconômicas.</p>
-                    </div>
+                    <CardIdealizadora img={imgMayara}
+                        nome="Mayara de Sousa dos S. Machado"
+                        crp="CRP 08/28214"
+                        titulo="Idealizadora e coordenadora"
+                        descricao="Formada em psicologia desde 2018, atuando na clínica desde então. Fundou o Projeto Ressignificar por acreditar no valor e na importância da psicologia." />
 
+                    <div className="mt-5 mt-sm-5 mt-md-0 mt-lg-0 mt-xl-0 mt-xxl-0"></div>
+
+                    <CardIdealizadora
+                        img={imgLilian}
+                        nome="Lilian de Carvalho Mailkut"
+                        crp="CRP 08/28674"
+                        titulo="Idealizadora e coordenadora"
+                        descricao="Formada em psicologia desde 2018, atuando na clínica desde então. Fundou o Projeto Ressignificar com o intuito de levar a psicologia para todos, independente das condições socioeconômicas."
+                    />
                 </div>
             </div>
         </>

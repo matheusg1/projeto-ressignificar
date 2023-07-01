@@ -8,7 +8,7 @@ export default function Index() {
     return (
         <>
             <HelmetComponent title="Início" />
-            <Title title="Nossas postagens..." />
+            <Title title="Nossas postagens..."/>
             <div id="instafeed" className=""></div>
             <Instafeed />
         </>

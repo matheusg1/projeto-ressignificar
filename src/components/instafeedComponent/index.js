@@ -6,7 +6,8 @@ export default function InstaFeed() {
 
     function abreviaLegenda(legenda) {
 
-        const tamanhoMaximo = 190;
+        //const tamanhoMaximo = 180;
+        const tamanhoMaximo = 160;
 
         if (legenda != null) {
             if (legenda.length > tamanhoMaximo) {
@@ -22,9 +23,9 @@ export default function InstaFeed() {
     async function getInstaFeed() {
         const token = process.env.REACT_APP_INSTAGRAM_API_KEY;
         const fields = "media_url,media_type,permalink,caption,children";
-        const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=${fields}&limit=12`;
+        const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=${fields}&limit=15`;
 
-        const { data } = await axios.get(url);        
+        const { data } = await axios.get(url);
         setFeedList(data.data);
     }
 
@@ -42,7 +43,12 @@ export default function InstaFeed() {
                                 <a key={item.id} href={item.permalink} target="_blank">
                                     <img src={item.media_url} />
                                 </a>
-                                <p className="fs-6 fw-medium pt-4 ps-2">{abreviaLegenda(item.caption)}</p>
+                                <div className='d-flex flex-column px-2'>
+                                    <a key={item.id} href={item.permalink} target="_blank">
+                                        <p className="fs-6 fw-semibold my-3 text-black">Projeto Ressignificar</p>
+                                    </a>
+                                    <p className="fs-6 fw-normal">{abreviaLegenda(item.caption)}</p>
+                                </div>
                             </div>
                         </>
                     );
@@ -52,7 +58,7 @@ export default function InstaFeed() {
                             <a key={item.id} href={item.permalink} target="_blank" className={styles.item}>
                                 <video controls>
                                     <source src={item.media_url}></source>
-                                    <p className="fs-6 fw-medium pt-4 ps-2">{abreviaLegenda(item.caption)}</p>
+                                    <p className="fs-6 fw-medium pt-4 px-2">{abreviaLegenda(item.caption)}</p>
                                 </video>
                             </a>
                         </div>
@@ -64,7 +70,12 @@ export default function InstaFeed() {
                                 <a key={item.id} href={item.permalink} target="_blank" >
                                     <img src={item.media_url} />
                                 </a>
-                                <p class="fs-6 fw-medium pt-4 ps-2">{abreviaLegenda(item.caption)}</p>
+                                <div className='d-flex flex-column px-2'>
+                                    <a key={item.id} href={item.permalink} target="_blank">
+                                        <p className="fs-6 fw-semibold my-3 text-black">Projeto Ressignificar</p>
+                                    </a>
+                                    <p className="fs-6 fw-normal">{abreviaLegenda(item.caption)}</p>
+                                </div>
                             </div>
                         </>
                     );

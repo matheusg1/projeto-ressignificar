@@ -5,7 +5,7 @@ import TitleComponent from "../../components/titleComponent";
 export default function Feedback() {
     return (
         <>
-        <HelmetComponent title="Feedback" />
+        <HelmetComponent title="Dar feedback" />
         <TitleComponent title="Dar feedback"/>
             <div className="col-12 d-flex justify-content-center">
                 <iframe

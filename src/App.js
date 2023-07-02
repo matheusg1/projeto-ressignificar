@@ -5,15 +5,17 @@ import 'boxicons'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './App.css';
-//import './assets/css/owl.carousel.min.css';
+
 import './styles/main.css';
 import Navbar from './components/navbarComponent';
+import FooterComponent from "./components/footerComponent";
 
 function App() {
   return (
     <>
-      <Navbar />      
+      <Navbar />     
       <AppRoutes />
+      <FooterComponent /> 
     </>
   );
 }

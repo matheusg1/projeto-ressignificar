@@ -4,11 +4,10 @@ import Title from '../../components/titleComponent';
 import HelmetComponent from '../../components/helmetComponent';
 
 export default function Index() {
-
     return (
         <>
             <HelmetComponent title="Início" />
-            <Title title="Nossas postagens..."/>
+            <Title title="Nossos posts"/>
             <div id="instafeed" className=""></div>
             <Instafeed />
         </>

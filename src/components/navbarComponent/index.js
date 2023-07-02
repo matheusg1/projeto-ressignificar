@@ -22,7 +22,7 @@ export default function Navbar() {
                                 aria-expanded="false">
                                 Inscrição
                             </a>
-                            <ul className="dropdown-menu">
+                            <ul className="dropdown-menu bg-warning-subtle">
                                 <li><Link className="dropdown-item" to="/acompanhamento-psicologico" >Acompanhamento psicológico</Link>
                                 </li>
                                 <li>
@@ -36,7 +36,7 @@ export default function Navbar() {
                         <li className="nav-item">
                             <Link className="nav-link" to="/atendimento-presencial">Locais</Link>
                         </li>
-                        <li className="nav-item pe-5">
+                        <li className="nav-item">
                             <Link className="nav-link" to="/dar-feedback" >Dar feedback</Link>
                         </li>
                     </ul>

@@ -20,6 +20,11 @@ body {
     cursor: default;
     min-height: 100vh;
 
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+
+
     background: rgb(255,239,238);
     background: linear-gradient(45deg, rgba(255,239,238,1) 0%, rgba(174,229,226,1) 25%, rgba(174,229,226,1) 85%, rgba(255,249,190,1) 100%);
 }
@@ -92,14 +97,7 @@ body {
     opacity: 1 !important;
 }
 
-.gradient-blue {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 1)), var(--secondary-blue);
+.footer{
+    font-size: 14px !important;
 }
 
-.gradient-pink {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 1)), var(--secondary-pink);
-}
-
-.gradient-yellow {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 1)), var(--secondary-yellow);
-}

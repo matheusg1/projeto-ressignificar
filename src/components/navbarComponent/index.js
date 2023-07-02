@@ -22,7 +22,7 @@ export default function Navbar() {
                                 aria-expanded="false">
                                 Inscrição
                             </a>
-                            <ul className="dropdown-menu bg-warning-subtle">
+                            <ul className="dropdown-menu">
                                 <li><Link className="dropdown-item" to="/acompanhamento-psicologico" >Acompanhamento psicológico</Link>
                                 </li>
                                 <li>

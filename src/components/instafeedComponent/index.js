@@ -44,11 +44,13 @@ export default function InstaFeed() {
                     );
                 } else if (item.media_type === "VIDEO") {
                     return (
-                        
+
                         <div className={`${styles.item} rounded-3 shadow`} key={item.id}>
-                            <video controls>
-                                <source src={item.media_url}></source>
-                            </video>
+                            <div className='text-center'>
+                                <video controls>
+                                    <source src={item.media_url}></source>
+                                </video>
+                            </div>
                             <div className='d-flex flex-column px-3'>
                                 <div className='d-flex align-items-center justify-content-between'>
                                     <p className="fs-6 fw-semibold my-3">

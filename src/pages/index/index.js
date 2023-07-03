@@ -2,14 +2,18 @@ import React from 'react';
 import Instafeed from '../../components/instafeedComponent';
 import Title from '../../components/titleComponent';
 import HelmetComponent from '../../components/helmetComponent';
+import Fade from '../../components/fadeComponent';
 
 export default function Index() {
     return (
         <>
             <HelmetComponent title="Início" />
-            <Title title="Nossos posts"/>
-            <div id="instafeed" className=""></div>
-            <Instafeed />
+            <Fade />
+            <div className="fade">
+                <Title title="Nossos posts" />
+                <div id="instafeed" className=""></div>
+                <Instafeed />
+            </div>
         </>
     )
 }

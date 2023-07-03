@@ -1,7 +1,7 @@
 import React from "react";
 import imgMayara from "../../img/mayara-img.webp"
 import imgLilian from "../../img/lilian-img.webp"
-import FadeAnimation from "../../components/fadeComponent";
+import Fade from "../../components/fadeComponent";
 import TitleComponent from '../../components/titleComponent';
 import HelmetComponent from "../../components/helmetComponent";
 import CardIdealizadora from "../../components/cardIdealizadoraComponent";
@@ -10,7 +10,7 @@ export default function About() {
     return (
         <>
             <HelmetComponent title="Sobre nós" />
-            <FadeAnimation />
+            <Fade />
             <div className="fade">
                 <TitleComponent title="Sobre nós" />
                 <div className="container-md pb-3">
@@ -18,7 +18,7 @@ export default function About() {
                         className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row pt-3 pb-1 px-3 glass">
                         <h2 className="fs-2 fw-bold about-topic pe-5 me-5 w-25">Objetivo</h2>
                         <div className="d-md-block fs-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0 my-xxl-0 w-100 about-topic-content">
-                            <p className="">O objetivo do projeto Ressignificar é proporcionar acesso a atendimentos psicológicos de
+                            <p className="">O objetivo do Projeto Ressignificar é proporcionar acesso a atendimentos psicológicos de
                                 acordo com as
                                 condições socioeconômicas de cada paciente. Assim sendo, o projeto vem com o intuito de facilitar o acesso à
                                 atendimentos psicológicos, tornando possível a oportunidade de cuidar da saúde mental.

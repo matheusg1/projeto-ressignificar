@@ -24,7 +24,7 @@ export default function InstaFeed() {
     async function getInstaFeed() {
         const token = process.env.REACT_APP_INSTAGRAM_API_KEY;
         const fields = "media_url,media_type,permalink,caption,children";
-        const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=${fields}&children&limit=15`;
+        const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=${fields}&children&limit=12`;
 
         const { data } = await axios.get(url);
         setFeedList(data.data);

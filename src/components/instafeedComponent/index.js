@@ -3,11 +3,12 @@ import axios from 'axios';
 import styles from './styles.module.css';
 import InstagramPost from '../instagramPostComponent';
 
+import logoInstagram from '../../img/logo-instagram.png'
+
 export default function InstaFeed() {
 
     function abreviaLegenda(legenda) {
 
-        //const tamanhoMaximo = 180;
         const tamanhoMaximo = 160;
 
         if (legenda != null) {
@@ -33,44 +34,39 @@ export default function InstaFeed() {
     useEffect(() => {
         getInstaFeed();
     }, []);
-
+    // "IMAGE", "CAROUSEL_ALBUM", "VIDEO"
     return (
         <section className={styles.container}>
             {feedList.map(item => {
-                if (item.media_type === "IMAGE") {
+                if (item.media_type === "IMAGE" || item.media_type === "CAROUSEL_ALBUM") {
                     return (
                         <InstagramPost post={item} />
                     );
                 } else if (item.media_type === "VIDEO") {
                     return (
-                        <div className={`${styles.item} rounded-3 shadow text-center`}>
-                            <a key={item.id} href={item.permalink} target="_blank" className={styles.item}>
-                                <video controls>
-                                    <source src={item.media_url}></source>
-                                    <p className="fs-6 fw-medium pt-4 px-2">{abreviaLegenda(item.caption)}</p>
-                                </video>
-                            </a>
+                        
+                        <div className={`${styles.item} rounded-3 shadow`} key={item.id}>
+                            <video controls>
+                                <source src={item.media_url}></source>
+                            </video>
+                            <div className='d-flex flex-column px-3'>
+                                <div className='d-flex align-items-center justify-content-between'>
+                                    <p className="fs-6 fw-semibold my-3">
+                                        <a key={item.id} href={item.permalink} target="_blank" className={`${styles.item} text-black`}>Projeto Ressignificar</a>
+                                    </p>
+                                    <a href=""><img className='mb-1' src={logoInstagram} height="16px"></img></a>
+                                </div>
+                                <p className="fs-6 fw-normal ">{abreviaLegenda(item.caption)}</p>
+                            </div>
                         </div>
                     );
-                } else /*if (item.media_type === "CAROUSEL_ALBUM")*/ {
+                } else { //Modificar
                     return (
-                        
                         <>
-                            <div className={`${styles.item} rounded-3 shadow`}>
-                                <a key={item.id} href={item.permalink} target="_blank" >
-                                    <img src={item.media_url} />
-                                </a>
-                                <div className='d-flex flex-column px-2'>
-                                    <a key={item.id} href={item.permalink} target="_blank">
-                                        <p className="fs-6 fw-semibold my-3 text-black">Projeto Ressignificar</p>
-                                    </a>
-                                    <p className="fs-6 fw-normal">{abreviaLegenda(item.caption)}</p>
-                                </div>
-                            </div>
                         </>
                     );
                 }
             })}
-        </section>
+        </section >
     );
 }

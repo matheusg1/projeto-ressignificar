@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import Fade from '../../components/fadeComponent';
 import TitleComponent from '../../components/titleComponent';
 import HelmetComponent from '../../components/helmetComponent';
@@ -21,7 +20,7 @@ export default function AtendimentoPresencial() {
                         <ItemLocalAtendimento local="Barbosa Ferraz" idadeMinima="acima de 06 anos" />
                         <ItemLocalAtendimento local="Corumbataí" idadeMinima="acima de 12 anos" />
                     </div>
-                </div>
+                </div>            
             </div>
         </>
     )

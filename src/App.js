@@ -13,9 +13,11 @@ import FooterComponent from "./components/footerComponent";
 function App() {
   return (
     <>
-      <Navbar />     
-      <AppRoutes />
-      <FooterComponent /> 
+      <div className="min-vh-100 d-flex flex-column">
+        <Navbar />
+        <AppRoutes />
+        <FooterComponent />
+      </div>
     </>
   );
 }

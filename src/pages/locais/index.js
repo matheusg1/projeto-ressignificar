@@ -8,9 +8,9 @@ export default function AtendimentoPresencial() {
         <>
             <HelmetComponent title="Locais" />
             <Fade />
-            <div className="fade">
+            <div className="fade animate d-flex flex-column flex-fill">
                 <TitleComponent title="Locais com atendimento presencial" />
-                <div className="container-md pb-3">
+                <div className="container-md pb-3 my-auto">
                     <div className="display-6">
                         <ItemLocalAtendimento local="Campo Mourão" idadeMinima="acima de 06 anos" />
                         <ItemLocalAtendimento local="Terra Boa" idadeMinima="acima de 06 anos" />

@@ -8,7 +8,7 @@ Site que desenvolvi para o Projeto **Ressignificar**, que oferece acompanhamento
  - [x] Seleção de cores baseada no <a href="https://www.instagram.com/pro.ressignificar/"> Instagram do Projeto</a>
 
 ---
-<img height="300px" src="https://drive.google.com/uc?export=view&id=17g-DNr_uO-63dJMptBGvAB6RBWARJlo-"> <img height="300px" src="https://drive.google.com/uc?export=view&id=19WREEEqckqHrKlgM8xmq-QVLo92tUwac"> 
+<img height="300px" src="https://drive.google.com/uc?export=view&id=1aZ0vvAlwrlu-RHXE3L8SMhcWvXBmROHW"> <img height="300px" src="https://drive.google.com/uc?export=view&id=19WREEEqckqHrKlgM8xmq-QVLo92tUwac"> 
 
 *Site em desktop e mobile* 
 <p><a href="https://www.figma.com/file/0UKoomO34OVNObpaVJAH8E/Projeto-Ressignificar?type=design&node-id=0%3A1&mode=design&t=gciR3olmM6QMiwL6-1">Link para o protótipo no Figma</a></p>

@@ -20,7 +20,7 @@ export default function InstagramPost(props) {
         return (
             <div className={`${styles.item} rounded-3 shadow`} key={id}>
                 <a href={permalink} target="_blank">
-                    <img src={media_url} />
+                    <img src={media_url} alt="Imagem do Instagram"/>
                 </a>
                 <div className='d-flex flex-column px-3'>
                     <div className='d-flex flex-row align-items-center justify-content-between'>

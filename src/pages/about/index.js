@@ -13,11 +13,11 @@ export default function About() {
             <Fade />
             <div className="fade">
                 <TitleComponent title="Sobre nós" />
-                <div className="container-md pb-3">
+                <div className="container-fluid pb-3 col-12 col-lg-10">
                     <div
-                        className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row pt-3 pb-1 px-3 glass">
+                        className="d-flex justify-content-between flex-column flex-sm-row pt-3 pb-1 px-3 glass">
                         <h2 className="fs-2 fw-bold about-topic pe-5 me-5 w-25">Objetivo</h2>
-                        <div className="d-md-block fs-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0 my-xxl-0 w-100 about-topic-content">
+                        <div className="d-md-block fs-5 my-3 my-sm-0 w-100 about-topic-content">
                             <p className="">O objetivo do Projeto Ressignificar é proporcionar acesso a atendimentos psicológicos de
                                 acordo com as
                                 condições socioeconômicas de cada paciente. Assim sendo, o projeto vem com o intuito de facilitar o acesso à
@@ -77,7 +77,7 @@ export default function About() {
                 </div>
 
                 <div
-                    className="d-flex justify-content-between flex-column flex-sm-column align-items-sm-center align-items-md-stretch flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-5 mx-auto col-sm-12 col-md-11 col-lg-11 col-xl-10 col-xxl-8">
+                    className="container-fluid d-flex justify-content-evenly flex-column flex-sm-column align-items-sm-center align-items-md-stretch flex-md-row mx-auto col-sm-12 col-md-11 col-lg-11 col-xl-10 col-xxl-8">
 
                     <CardIdealizadora img={imgMayara}
                         nome="Mayara de Sousa dos S. Machado"
@@ -85,7 +85,7 @@ export default function About() {
                         titulo="Idealizadora e coordenadora"
                         descricao="Formada em psicologia desde 2018, atuando na clínica desde então. Fundou o Projeto Ressignificar por acreditar no valor e na importância da psicologia." />
 
-                    <div className="mt-5 mt-sm-5 mt-md-0 mt-lg-0 mt-xl-0 mt-xxl-0"></div>
+                    <div className="mt-5 mt-sm-5 mt-md-0"></div>
 
                     <CardIdealizadora
                         img={imgLilian}

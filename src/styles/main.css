@@ -20,8 +20,8 @@ body {
     cursor: default;
     min-height: 100vh;
 
-    background: rgb(255,239,238);
-    background: linear-gradient(45deg, rgba(255,239,238,1) 0%, rgba(174,229,226,1) 25%, rgba(174,229,226,1) 85%, rgba(255,249,190,1) 100%);
+    background: rgb(255, 239, 238);
+    background: linear-gradient(45deg, rgba(255, 239, 238, 1) 0%, rgba(174, 229, 226, 1) 25%, rgba(174, 229, 226, 1) 85%, rgba(255, 249, 190, 1) 100%);
 }
 
 ::selection {
@@ -31,7 +31,7 @@ body {
 
 .navbar {
     /*background-color: var(--secondary-blue) !important;*/
-    /*background-color: transparent !important;*/    
+    /*background-color: transparent !important;*/
     background: rgba(255, 255, 255, 0.2) !important;
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
@@ -45,11 +45,11 @@ body {
 }
 
 .navbar-brand {
-    color: var(--primary-blue);    
+    color: var(--primary-blue);
 }
 
 
-.nav-link {    
+.nav-link {
     color: var(--primary-blue);
 }
 
@@ -71,11 +71,11 @@ body {
 }
 
 .about-card {
-    background: rgba(255, 255, 255, 0.2);    
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    /*box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
+    /*backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);*/
+    /*border: 1px solid rgba(255, 255, 255, 0.3);*/
 }
 
 .iframe-custom {
@@ -92,7 +92,66 @@ body {
     opacity: 1 !important;
 }
 
-.footer{
+.footer {
     font-size: 14px !important;
 }
 
+.fade-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.fade-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeMove .8s ease-in-out forwards;
+}
+
+@keyframes fadeMove {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-item:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.fade-item:nth-child(3) {
+    animation-delay: .2s;
+
+}
+
+.fade-item:nth-child(4) {
+    animation-delay: .3s;
+}
+
+.fade-item:nth-child(5) {
+    animation-delay: .4s;
+}
+
+.fade-item:nth-child(6) {
+    animation-delay:.5s;
+}
+
+.fade-item:nth-child(7) {
+    animation-delay: .6s;
+}
+
+.fade-item:nth-child(8) {
+    animation-delay: .7s;
+}
+
+.fade-item:nth-child(9) {
+    animation-delay: .8s;
+}
+
+.fade-item:nth-child(10) {
+    animation-delay: .9s;
+}

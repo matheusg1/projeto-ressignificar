@@ -7,7 +7,7 @@ export default function Navbar() {
         <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-white">
             <div className="container-fluid">
                 <Link>
-                    <img id="img-logo" className="ms-lg-4" src={logoNavbar} />
+                    <img id="img-logo" className="ms-lg-4" src={logoNavbar} alt="Logotipo do projeto, desenho de uma lâmpada com uma borboleta sobreposta" />
                 </Link>
                 <Link className="navbar-brand ps-lg-3" to="/">Projeto Ressignificar</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

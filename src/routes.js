@@ -7,6 +7,7 @@ import AcompanhamentoPsicologicoForm from './pages/acompanhamento-psicologico';
 import AcompanhamentoPsiquiatricoForm from './pages/acompanhamento-psiquiatrico';
 import AcompanhamentoNutricionalForm from './pages/acompanhamento-nutricional';
 import AtendimentoPresencial from './pages/locais';
+import Login from './pages/login';
 
 export default function AppRoutes() {
     return (
@@ -19,6 +20,7 @@ export default function AppRoutes() {
             <Route path="/acompanhamento-psiquiatrico" element={<AcompanhamentoPsiquiatricoForm />} />
             <Route path="/acompanhamento-nutricional" element={<AcompanhamentoNutricionalForm />} />
             <Route path="/dar-feedback" element={<Feedback />} />
+            <Route path="/login" element={<Login />} />
         </Routes>
     );
 }

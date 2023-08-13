@@ -6,12 +6,11 @@ import ItemLocalAtendimento from '../../components/itemLocalAtendimentoPresencia
 export default function AtendimentoPresencial() {
     return (
         <>
-            <HelmetComponent title="Locais" />
-            <Fade />
+            <HelmetComponent title="Locais" />            
             <div className="d-flex flex-column flex-fill">
                 <TitleComponent title="Locais com atendimento presencial" />
                 <div className="container-md pb-3 my-auto">
-                    <div className="display-6 fade-container">
+                    <div className="display-6">
                         <ItemLocalAtendimento local="Campo Mourão" idadeMinima="acima de 6 anos" />
                         <ItemLocalAtendimento local="Terra Boa" idadeMinima="acima de 6 anos" />
                         <ItemLocalAtendimento local="Maringá" idadeMinima="acima de 12 anos" />

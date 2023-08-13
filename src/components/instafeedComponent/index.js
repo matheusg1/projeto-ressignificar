@@ -42,10 +42,9 @@ export default function InstaFeed() {
                     return (
                         <InstagramPost post={item} />
                     );
-                } else if (item.media_type === "VIDEO") {
+                } else /*if (item.media_type === "VIDEO")*/ {
                     return (
-
-                        <div className={`${styles.item} rounded-3 shadow`} key={item.id}>
+                        <div className={`${styles.item} rounded-3 shadow fade-post`} key={item.id}>
                             <div className='text-center'>
                                 <video controls>
                                     <source src={item.media_url}></source>
@@ -61,11 +60,6 @@ export default function InstaFeed() {
                                 <p className="fs-6 fw-normal ">{abreviaLegenda(item.caption)}</p>
                             </div>
                         </div>
-                    );
-                } else { //Modificar
-                    return (
-                        <>
-                        </>
                     );
                 }
             })}

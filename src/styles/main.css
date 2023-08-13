@@ -96,15 +96,99 @@ body {
     font-size: 14px !important;
 }
 
-.fade-container {
-    display: flex;
-    flex-direction: column;
+
+.fade-post {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeMove 1s ease-in-out forwards;
 }
 
-.fade-item {
+
+.fade-post:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.fade-post:nth-child(3) {
+    animation-delay: .2s;
+
+}
+
+.fade-post:nth-child(4) {
+    animation-delay: .3s;
+}
+
+.fade-post:nth-child(5) {
+    animation-delay: .4s;
+}
+
+.fade-post:nth-child(6) {
+    animation-delay:.5s;
+}
+
+.fade-post:nth-child(7) {
+    animation-delay: .6s;
+}
+
+.fade-post:nth-child(8) {
+    animation-delay: .7s;
+}
+
+.fade-post:nth-child(9) {
+    animation-delay: .8s;
+}
+
+.fade-post:nth-child(10) {
+    animation-delay: .9s;
+}
+
+.fade-post:nth-child(11) {
+    animation-delay: 1s;
+}
+
+.fade-post:nth-child(12) {
+    animation-delay: 1.1s;
+}
+
+.fade-local {
     opacity: 0;
     transform: translateX(-20px);
     animation: fadeMove .8s ease-in-out forwards;
+}
+
+.fade-local:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.fade-local:nth-child(3) {
+    animation-delay: .2s;
+
+}
+.fade-local:nth-child(4) {
+    animation-delay: .3s;
+}
+
+.fade-local:nth-child(5) {
+    animation-delay: .4s;
+}
+
+.fade-local:nth-child(6) {
+    animation-delay:.5s;
+}
+
+.fade-local:nth-child(7) {
+    animation-delay: .6s;
+}
+
+.fade-local:nth-child(8) {
+    animation-delay: .7s;
+}
+
+.fade-local:nth-child(9) {
+    animation-delay: .8s;
+}
+
+.fade-local:nth-child(10) {
+    animation-delay: .9s;
 }
 
 @keyframes fadeMove {
@@ -117,41 +201,4 @@ body {
         opacity: 1;
         transform: translateX(0);
     }
-}
-
-.fade-item:nth-child(2) {
-    animation-delay: .1s;
-}
-
-.fade-item:nth-child(3) {
-    animation-delay: .2s;
-
-}
-
-.fade-item:nth-child(4) {
-    animation-delay: .3s;
-}
-
-.fade-item:nth-child(5) {
-    animation-delay: .4s;
-}
-
-.fade-item:nth-child(6) {
-    animation-delay:.5s;
-}
-
-.fade-item:nth-child(7) {
-    animation-delay: .6s;
-}
-
-.fade-item:nth-child(8) {
-    animation-delay: .7s;
-}
-
-.fade-item:nth-child(9) {
-    animation-delay: .8s;
-}
-
-.fade-item:nth-child(10) {
-    animation-delay: .9s;
 }

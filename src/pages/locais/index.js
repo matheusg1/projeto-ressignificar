@@ -37,7 +37,7 @@ export default function AtendimentoPresencial() {
                                 />
                             ))
                         ) : (
-                            <p>Nenhum local encontrado.</p>
+                            <p>Carregando locais</p>
                         )}
                     </div>
                 </div>

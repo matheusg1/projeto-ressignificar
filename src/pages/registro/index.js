@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { supabase } from '../../services/apiServices'
 import { useAuth } from "../../hooks/useAuth";
 
-export default function Login() {
+export default function Registro() {
 
-    const { user, setUser } = useAuth();
-
+    const { user, setUser } = useAuth();    
+    
     const [values, setValues] = useState({
         email: "",
-        password: ""
+        password: "",
+        //passwordConfirm: ""
     })
 
     const handleChangeValues = (e) => {
@@ -16,25 +17,30 @@ export default function Login() {
         setValues((prevValues) => ({
             ...prevValues,
             [e.target.name]: e.target.value,
-        }));
+        }));        
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        //setLoading(true)
 
-        let { data, error } = await supabase.auth.signInWithPassword({
+        //confirmaçao de senhas e tratamentos
+
+        let { user, error } = await supabase.auth.signUp({
             email: values.email,
             password: values.password
         })
 
+        console.log(values)
+
         if (error) {
-            alert(error);
+            console.log(error);
             return;
         }
 
         setUser(user);
-        console.log("login realizado com sucesso")
-        window.location.reload()
+        //setLoading(false);
+        alert('cadastro realizado com sucesso' + user)
     }
 
     return (
@@ -42,19 +48,21 @@ export default function Login() {
             onSubmit={handleSubmit}>
             <div className="my-auto p-4 about-card rounded-1">
                 <div className="mb-3">
-                    <label for="exampleInputEmail1" className="form-label">Login</label>
+                    <label for="exampleInputEmail1" className="form-label">Cadastrar usuário</label>
                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        required
                         name="email"
-                        value={values.email}
                         onChange={handleChangeValues}
+                        value={values.email}
                     />
                 </div>
                 <div className="mb-3">
                     <label for="exampleInputPassword1" className="form-label">Senha</label>
                     <input type="password" className="form-control" id="exampleInputPassword1"
+                        required
                         name="password"
-                        value={values.password}
                         onChange={handleChangeValues}
+                        value={values.password}
                     />
                 </div>
                 <button type="submit" className="btn btn-primary">Entrar</button>

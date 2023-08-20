@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import About from './pages/about';
 import Feedback from './pages/dar-feedback';
@@ -8,8 +8,21 @@ import AcompanhamentoPsiquiatricoForm from './pages/acompanhamento-psiquiatrico'
 import AcompanhamentoNutricionalForm from './pages/acompanhamento-nutricional';
 import AtendimentoPresencial from './pages/locais';
 import Login from './pages/login';
+import Registro from './pages/registro';
+import { useAuth } from "../src/hooks/useAuth";
 
 export default function AppRoutes() {
+    const { user } = useAuth();
+    const [logado, setLogado] = useState(false);
+
+    useEffect(() => {
+        if (user && user["data"]["user"]) {
+            setLogado(true);
+        } else {
+            setLogado(false);
+        }
+    }, [user]);
+
     return (
         <Routes>
             <Route path="*" element={<Navigate to="/" replace />} />
@@ -21,6 +34,12 @@ export default function AppRoutes() {
             <Route path="/acompanhamento-nutricional" element={<AcompanhamentoNutricionalForm />} />
             <Route path="/dar-feedback" element={<Feedback />} />
             <Route path="/login" element={<Login />} />
+            <Route
+                path="/registro"
+                element={logado
+                    ? <Registro />
+                    : <Navigate to="/login" replace />}
+            />
         </Routes>
     );
 }

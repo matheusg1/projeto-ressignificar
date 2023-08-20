@@ -1,5 +1,4 @@
 import React from "react";
-import logo from './logo.svg';
 import AppRoutes from './routes';
 import 'boxicons'
 import 'bootstrap/dist/css/bootstrap.min.css';

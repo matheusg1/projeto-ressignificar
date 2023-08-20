@@ -1,34 +1,32 @@
+import { createClient } from "@supabase/supabase-js";
 import axios from 'axios';
 
+const TOKEN = process.env.REACT_APP_RESSIGNIFICAR_API_KEY;
+const URL_AUTH = 'https://jyjmwqsaqkzbomxqsvjd.supabase.co/'
+const URL_LOCAL = `https://jyjmwqsaqkzbomxqsvjd.supabase.co/rest/v1/Local`;
+
+export const supabase = createClient(URL_AUTH, TOKEN);
+
 export async function RecebeLocais() {
-    const token = process.env.REACT_APP_RESSIGNIFICAR_API_KEY;
     const config = {
         headers: {
-            'apikey': token,
+            'apikey': TOKEN,
         }
-    };
-    const url = `https://jyjmwqsaqkzbomxqsvjd.supabase.co/rest/v1/Local`;
+    };    
 
-    const { data } = await axios.get(url, config);
+    const { data } = await axios.get(URL_LOCAL, config);
     return data;
 }
 
-export async function AdicionaLocal(nome, idadeMinima) {
-    const token = process.env.REACT_APP_RESSIGNIFICAR_API_KEY;
-    const config = {
-        headers: {
-            'apikey': token,
-        }
-    };
-    const url = `https://jyjmwqsaqkzbomxqsvjd.supabase.co/rest/v1/Local`;
+export async function AdicionaLocal(nome, idadeMinima) {    
 
     try {
-        const response = await axios.post(url, {
+        const response = await axios.post(URL_LOCAL, {
             nome: nome,
             limite_idade: idadeMinima
         }, {
             headers: {
-                'apikey': token,
+                'apikey': TOKEN,
             }
         });
         return response;

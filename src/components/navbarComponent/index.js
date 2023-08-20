@@ -1,8 +1,30 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import logoNavbar from '../../img/logo-navbar.png';
 import { Link } from 'react-router-dom';
+import { useAuth } from "../../hooks/useAuth";
+import { supabase } from '../../services/apiServices'
 
 export default function Navbar() {
+    const { user } = useAuth();
+    let logado = useState(false);
+
+    if (user && user["data"]["user"]) {
+        logado = true;
+    } else {
+        logado = false;
+    }
+
+
+    async function logout() {
+        let { error } = await supabase.auth.signOut()
+        if (!error) {
+            alert('deslogado')
+        }
+        else {
+            console.log('falha ao deslogar')
+        }
+    }
+
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-white">
             <div className="container-fluid">
@@ -42,7 +64,11 @@ export default function Navbar() {
                             <Link className="nav-link" to="/dar-feedback" >Dar feedback</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/login" >Login</Link>
+                            {logado ? (
+                                <Link className="nav-link" to="/login" onClick={logout}>Deslogar</Link>
+                            ) : (
+                                <Link className="nav-link" to="/login">Login</Link>
+                            )}
                         </li>
                     </ul>
                 </div>
@@ -50,3 +76,4 @@ export default function Navbar() {
         </nav>
     );
 }
+

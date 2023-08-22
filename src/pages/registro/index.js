@@ -1,11 +1,18 @@
 import { useState } from 'react';
 import { supabase } from '../../services/apiServices'
 import { useAuth } from "../../hooks/useAuth";
+import { useNavigate  } from 'react-router-dom';
 
 export default function Registro() {
-
-    const { user, setUser } = useAuth();    
+    const { user, setUser } = useAuth();
     
+    const userData = user ? user["data"]["user"] : null;
+    const navigate = useNavigate();
+
+    if(!userData){
+        navigate('/login')
+    }
+
     const [values, setValues] = useState({
         email: "",
         password: "",
@@ -17,7 +24,7 @@ export default function Registro() {
         setValues((prevValues) => ({
             ...prevValues,
             [e.target.name]: e.target.value,
-        }));        
+        }));
     };
 
     const handleSubmit = async (e) => {

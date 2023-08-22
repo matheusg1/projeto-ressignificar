@@ -5,26 +5,20 @@ import { useAuth } from "../../hooks/useAuth";
 import { supabase } from '../../services/apiServices'
 
 export default function Navbar() {
-    const { user } = useAuth();
-    let logado = useState(false);
-
-    if (user && user["data"]["user"]) {
-        logado = true;
-    } else {
-        logado = false;
-    }
-
+    const { user, setUser } = useAuth();
+    const userData = user ? user["data"]["user"] : null;
 
     async function logout() {
         let { error } = await supabase.auth.signOut()
         if (!error) {
             alert('deslogado')
+            setUser()
         }
         else {
             console.log('falha ao deslogar')
         }
     }
-
+    
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-white">
             <div className="container-fluid">
@@ -64,7 +58,7 @@ export default function Navbar() {
                             <Link className="nav-link" to="/dar-feedback" >Dar feedback</Link>
                         </li>
                         <li className="nav-item">
-                            {logado ? (
+                            {userData ? (
                                 <Link className="nav-link" to="/login" onClick={logout}>Deslogar</Link>
                             ) : (
                                 <Link className="nav-link" to="/login">Login</Link>

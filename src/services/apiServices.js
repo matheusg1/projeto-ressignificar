@@ -9,13 +9,12 @@ const URL_LOCAL = `https://jyjmwqsaqkzbomxqsvjd.supabase.co/rest/v1/Local`;
 export const supabase = createClient(URL_AUTH, TOKEN);
 
 export async function RecebeLocais() {
-    const config = {
-        headers: {
-            'apikey': TOKEN,
-        }
-    };
 
-    const { data } = await axios.get(URL_LOCAL, config);
+    let { data: data, error } = await supabase
+        .from('Local')
+        .select('*')
+        .order('nome', { ascending: true })
+
     return data;
 }
 
@@ -30,33 +29,32 @@ export async function AdicionaLocal(nome, idadeMinima) {
             },
         ])
 
-    if (error) {
-        console.log(error)
-        mensagemErro();
+    if (error) {        
+        MensagemErro();
         return;
     }
 
-    mensagemSucesso("Local adicionado com sucesso")
+    MensagemSucesso("Local adicionado com sucesso")
 }
 
 export async function EditaLocal(id, nome, idadeMinima) {
     const { data, error } = await supabase
         .from('Local')
         .update([
-            {                
+            {
                 nome: nome,
                 limite_idade: idadeMinima
             },
         ]).eq('id', id)
         .select()
-        
 
-    if (!data.length) {        
-        mensagemErro();
+
+    if (!data.length) {
+        MensagemErro();
         return;
     }
 
-    mensagemSucesso("Local alterado com sucesso")
+    MensagemSucesso("Local alterado com sucesso")
 }
 
 export async function DeletaLocal(id) {
@@ -82,34 +80,44 @@ export async function DeletaLocal(id) {
             .eq("id", id);
 
         if (!error) {
-            Swal.fire(
-                'Sucesso!',
-                'O local foi deletado.',
-                'success'
-            );
-            
+            Swal.fire({
+                title: 'Sucesso!',
+                text: 'O local foi deletado.',
+                icon: 'success'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.location.reload(true);
+                }
+            });
+
         } else {
-            mensagemErro()
+            MensagemErro();
         }
     }
 }
 
-
-function mensagemSucesso(mensagem) {
+export function MensagemSucesso(mensagem) {
     Swal.fire({
         icon: 'success',
-        title: 'Sucesso',
-        text: mensagem
-    })
-
+        title: mensagem,
+        /*text: mensagem*/
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.location.reload(true);
+        }
+    });
 }
 
-function mensagemErro() {
+export function MensagemErro() {
     Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'Ocorreu um erro'
-    })
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.location.reload(true);
+        }
+    });
 }
 
 

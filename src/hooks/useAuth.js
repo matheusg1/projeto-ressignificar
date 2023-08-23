@@ -10,18 +10,15 @@ export function AuthContextProvider({ children }) {
         async function fetchUser() {
             try {
                 const user = await supabase.auth.getUser();
-                console.log(user)
-
+                
                 if (user.data.user) {
                     setUser(user);
-                    console.log(user)
-                    console.log('usuario esta logado')
+
                 } else if(user.error) {
-                    setUser('');
-                    console.log('usuario definido como null');
+                    setUser('');                    
                 }
             } catch (error) {
-                console.error('Erro ao buscar usuário:', error.message);
+                //tratar
             }
         }
         fetchUser();

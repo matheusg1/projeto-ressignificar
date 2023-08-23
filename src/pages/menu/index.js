@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../../services/apiServices'
-import { useAuth } from "../../hooks/useAuth";
+import { useNavigate } from 'react-router-dom';
 import { AdicionaLocal, EditaLocal, RecebeLocais, DeletaLocal } from '../../services/apiServices';
-import Swal from 'sweetalert2';
 
 export default function Menu() {
 
-    const { user, setUser } = useAuth();
     const [locais, setLocais] = useState([]);
+    const [tituloModal, setTituloModal] = useState('Editar');
+    const navigate = useNavigate();
     const [values, setValues] = useState({
         id: "",
         nome: "",
@@ -20,39 +19,32 @@ export default function Menu() {
                 const locaisResponse = await RecebeLocais();
                 setLocais(locaisResponse);
             } catch (error) {
-                console.error('Erro ao buscar locais:', error);
+                //console.error('Erro ao buscar locais:', error);
             }
         }
         fetchLocais();
     }, []);
 
     const handleChangeValues = (e) => {
-
         setValues((prevValues) => ({
             ...prevValues,
             [e.target.name]: e.target.value,
         }));
-
-        console.log(e.target.value)
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(values.id)
-        if(values.id == 0){
-            console.log('ADICIONOU id: ' + values.id)
+
+        if (values.id == 0) {
             AdicionaLocal(values.nome, values.limite_idade)
         }
-        else{
-            console.log(values)
-            console.log('EDITOU?? id: ' + values.id)
-            EditaLocal(values.id, values.nome, values.limite_idade)                    
+        else {
+            EditaLocal(values.id, values.nome, values.limite_idade)
         }
-        //AdicionaLocal(values.nome, values.limite_idade)
     }
 
-    const handleEditar = (local) => {        
-
+    const handleEditar = (local) => {
+        setTituloModal('Editar')
         setValues({
             ...values,
             id: local.id,
@@ -62,18 +54,18 @@ export default function Menu() {
     }
 
     const handleCriar = () => {
+        setTituloModal('Adicionar')
+
         setValues({
             ...values,
             id: 0,
             nome: "",
-            limite_idade:""
+            limite_idade: ""
         });
     }
 
     const handleDeletar = (id) => {
-        console.log(values.id)
         DeletaLocal(id)
-
     }
 
 
@@ -81,16 +73,23 @@ export default function Menu() {
         <>
             <div className='d-flex justify-content-center align-items-center flex-fill'>
                 <div className='col-12 col-lg-4'>
-                    <button class="btn btn-sm btn-outline-primary my-3 d-flex ms-auto"
-                        data-bs-toggle="modal" data-bs-target="#modalLocal"
-                        type="button"
-                        onClick={() => handleCriar()}
-                    >Adicionar novo local
-                    </button>
+                    <div className='d-flex justify-content-between mb-2'>
+                        <button className="btn btn-sm btn-outline-primary"
+                            data-bs-toggle="modal" data-bs-target="#modalLocal"
+                            type="button"
+                            onClick={() => handleCriar()}
+                        >Adicionar novo local
+                        </button>
+                        <button className="btn btn-sm btn-outline-primary"
+                            type="button"
+                            onClick={() => navigate('/registro')}
+                        >Registrar novo usuário
+                        </button>
+                    </div>
                     <table className='table'>
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th hidden>Id</th>
                                 <th>Local</th>
                                 <th>Idade mínima</th>
                                 <th className='text-center'>Editar/Deletar</th>
@@ -100,7 +99,7 @@ export default function Menu() {
                             {locais.length > 0 && (
                                 locais.map(local => (
                                     <tr key={local.id}>
-                                        <td>{local.id}</td>
+                                        <td hidden>{local.id}</td>
                                         <td>{local.nome}</td>
                                         <td>{local.limite_idade}</td>
                                         <td className='text-center'>
@@ -128,12 +127,12 @@ export default function Menu() {
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h1 className="modal-title fs-5" id="modalLocalLabel">Editar local</h1>
+                                <h1 className="modal-title fs-5" id="modalLocalLabel">{tituloModal} local</h1>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
                                 <form onSubmit={handleSubmit}>
-                                    <div className="mb-3">
+                                    <div className="mb-3" hidden>
                                         <label for="inputIdLocal" className="form-label">Id</label>
                                         <input type="text" name="id" className="form-control" id="inputIdLocal"
                                             value={values.id}
@@ -141,7 +140,7 @@ export default function Menu() {
                                         />
                                     </div>
                                     <div className="mb-3">
-                                        <label for="inputNomeLocal" className="form-label">Nome do local</label>
+                                        <label for="inputNomeLocal" className="form-label">Nome</label>
                                         <input type="text" name="nome" className="form-control" id="inputNomeLocal"
                                             value={values.nome}
                                             onChange={handleChangeValues}
@@ -169,33 +168,3 @@ export default function Menu() {
         </>
     )
 }
-
-/*
- <form className="d-flex justify-content-center align-items-center col-12 col-sm-12 flex-fill"
-                onSubmit={handleSubmit}>
-                <div className="my-auto p-4 about-card rounded-1">
-                    <div className="mb-3">
-                        <label for="exampleInputEmail1" className="form-label">Login</label>
-                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            name="email"
-                            value={values.email}
-                            onChange={handleChangeValues}
-                        />
-                    </div>
-                    <div className="mb-3">
-                        <label for="exampleInputPassword1" className="form-label">Senha</label>
-                        <input type="password" className="form-control" id="exampleInputPassword1"
-                            name="password"
-                            value={values.password}
-                            onChange={handleChangeValues}
-                        />
-                    </div>
-                    <button type="submit" className="btn btn-primary">Entrar</button>
-                    {userData && (
-                        <button type="button" className="btn btn-danger">Usuario existe</button>
-                    )}
-                </div>
-            </form>
-
-
-*/

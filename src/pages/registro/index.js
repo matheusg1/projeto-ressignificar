@@ -1,17 +1,16 @@
 import { useState } from 'react';
-import { supabase } from '../../services/apiServices'
+import { supabase, MensagemSucesso } from '../../services/apiServices'
 import { useAuth } from "../../hooks/useAuth";
 import { useNavigate  } from 'react-router-dom';
 
 export default function Registro() {
     const { user, setUser } = useAuth();
-    
-    const userData = user ? user["data"]["user"] : null;
+
     const navigate = useNavigate();
 
-    if(!userData){
+    /*if(user){
         navigate('/login')
-    }
+    }*/
 
     const [values, setValues] = useState({
         email: "",
@@ -29,33 +28,27 @@ export default function Registro() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        //setLoading(true)
 
-        //confirmaçao de senhas e tratamentos
-
-        let { user, error } = await supabase.auth.signUp({
+        let { data, error } = await supabase.auth.signUp({
             email: values.email,
             password: values.password
-        })
-
-        console.log(values)
+        })        
 
         if (error) {
-            console.log(error);
+            //tratar
             return;
         }
 
-        setUser(user);
-        //setLoading(false);
-        alert('cadastro realizado com sucesso' + user)
+        setUser(data);        
+        MensagemSucesso('Cadastro realizado com sucesso')        
     }
 
     return (
         <form className="d-flex justify-content-center align-items-center col-12 col-sm-12 flex-fill"
             onSubmit={handleSubmit}>
-            <div className="my-auto p-4 about-card rounded-1">
+            <div className="my-auto p-4 form-card rounded-1">
                 <div className="mb-3">
-                    <label for="exampleInputEmail1" className="form-label">Cadastrar usuário</label>
+                    <label for="exampleInputEmail1" className="form-label">Email</label>
                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                         required
                         name="email"
@@ -72,7 +65,7 @@ export default function Registro() {
                         value={values.password}
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Entrar</button>
+                <button type="submit" className="btn btn-outline-primary w-100">Cadastrar</button>
             </div>
         </form>
     )

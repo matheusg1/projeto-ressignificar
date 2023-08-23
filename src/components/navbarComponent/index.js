@@ -1,21 +1,21 @@
 import { React, useState, useEffect } from "react";
 import logoNavbar from '../../img/logo-navbar.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from "../../hooks/useAuth";
-import { supabase } from '../../services/apiServices'
+import { supabase, MensagemSucesso } from '../../services/apiServices'
 
 export default function Navbar() {
-    const { user, setUser } = useAuth();
-    //const userData = user ? user["data"]["user"] : null;
+    const { user, setUser } = useAuth();    
+    const navigate = useNavigate();
 
     async function logout() {
         let { error } = await supabase.auth.signOut()
-        if (!error) {
-            alert('deslogado')
+        if (!error) {            
             setUser('')
+            navigate('/login');
         }
         else {
-            console.log('falha ao deslogar')
+            //tratar 
         }
     }
 

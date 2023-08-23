@@ -24,15 +24,16 @@ export default function AppRoutes() {
             <Route path="/acompanhamento-psicologico" element={<AcompanhamentoPsicologicoForm />} />
             <Route path="/acompanhamento-psiquiatrico" element={<AcompanhamentoPsiquiatricoForm />} />
             <Route path="/acompanhamento-nutricional" element={<AcompanhamentoNutricionalForm />} />
-            <Route path="/dar-feedback" element={<Feedback />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/dar-feedback" element={<Feedback />} />            
+            <Route path="/login" element={<Login />} />            
+
             <Route
                 path="/menu"
-                element={user ? <Menu /> : <Navigate to="/login" replace />}
+                element={!user.error ? <Menu /> : <Navigate to="/login" replace />}
             />
             <Route
                 path="/registro"
-                element={user ? <Registro /> : <Navigate to="/login" replace />}
+                element={!user.error ? <Registro /> : <Navigate to="/login" replace />}
             />
         </Routes>
     );

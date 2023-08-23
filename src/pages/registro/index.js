@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { supabase, MensagemSucesso } from '../../services/apiServices'
+import { supabase, MensagemSucesso, MensagemErro } from '../../services/apiServices'
 import { useAuth } from "../../hooks/useAuth";
 import { useNavigate  } from 'react-router-dom';
 
@@ -29,6 +29,10 @@ export default function Registro() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if(!values.email || !values.password){
+            return;
+        }
+
         let { data, error } = await supabase.auth.signUp({
             email: values.email,
             password: values.password
@@ -36,36 +40,39 @@ export default function Registro() {
 
         if (error) {
             //tratar
+            MensagemErro("Erro ao cadastrar usuário");
             return;
         }
 
         setUser(data);        
-        MensagemSucesso('Cadastro realizado com sucesso')        
+        MensagemSucesso('Cadastro realizado!')        
     }
 
     return (
         <form className="d-flex justify-content-center align-items-center col-12 col-sm-12 flex-fill"
             onSubmit={handleSubmit}>
             <div className="my-auto p-4 form-card rounded-1">
-                <div className="mb-3">
-                    <label for="exampleInputEmail1" className="form-label">Email</label>
-                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <div className="form-floating mb-3">
+                    <input type="email" className="form-control" id="InputEmail"
                         required
                         name="email"
                         onChange={handleChangeValues}
                         value={values.email}
+                        placeholder="Email"
                     />
+                    <label for="InputEmail">Email</label>
                 </div>
-                <div className="mb-3">
-                    <label for="exampleInputPassword1" className="form-label">Senha</label>
-                    <input type="password" className="form-control" id="exampleInputPassword1"
+                <div className="form-floating mb-3">
+                    <input type="password" className="form-control" id="InputSenha"
                         required
                         name="password"
                         onChange={handleChangeValues}
                         value={values.password}
+                        placeholder="Senha"
                     />
+                    <label for="InputSenha">Senha</label>
                 </div>
-                <button type="submit" className="btn btn-outline-primary w-100">Cadastrar</button>
+                <button type="submit" className="btn btn-lg btn-outline-primary w-100 rounded-2">Cadastrar</button>
             </div>
         </form>
     )

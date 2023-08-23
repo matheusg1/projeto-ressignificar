@@ -29,11 +29,11 @@ export default function AppRoutes() {
 
             <Route
                 path="/menu"
-                element={!user.error ? <Menu /> : <Navigate to="/login" replace />}
+                element={user ? <Menu /> : <Navigate to="/login" replace />}
             />
             <Route
                 path="/registro"
-                element={!user.error ? <Registro /> : <Navigate to="/login" replace />}
+                element={user ? <Registro /> : <Navigate to="/login" replace />}
             />
         </Routes>
     );

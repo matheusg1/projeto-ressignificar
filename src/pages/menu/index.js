@@ -72,53 +72,54 @@ export default function Menu() {
     return (
         <>
             <div className='d-flex justify-content-center align-items-center flex-fill'>
-                <div className='col-12 col-lg-4'>
-                    <div className='d-flex justify-content-between mb-2'>
-                        <button className="btn btn-sm btn-outline-primary"
-                            data-bs-toggle="modal" data-bs-target="#modalLocal"
-                            type="button"
-                            onClick={() => handleCriar()}
-                        >Adicionar novo local
-                        </button>
-                        <button className="btn btn-sm btn-outline-primary"
-                            type="button"
-                            onClick={() => navigate('/registro')}
-                        >Registrar novo usuário
-                        </button>
+                <div className='col-12 col-xl-5'>
+                    <div className='container'>
+                        <div className='d-flex justify-content-between mb-2'>
+                            <button className="btn btn-sm btn-outline-primary"
+                                data-bs-toggle="modal" data-bs-target="#modalLocal"
+                                type="button"
+                                onClick={() => handleCriar()}
+                            >Adicionar novo local
+                            </button>
+                            <button className="btn btn-sm btn-outline-primary"
+                                type="button"
+                                onClick={() => navigate('/registro')}
+                            >Registrar novo usuário
+                            </button>
+                        </div>
+                        <table className='table table-hover shadow'>
+                            <thead>
+                                <tr>
+                                    <th hidden>Id</th>
+                                    <th>Local</th>
+                                    <th>Idade mínima</th>
+                                    <th className='text-center'>Editar/Deletar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {locais.length > 0 && (
+                                    locais.map(local => (
+                                        <tr key={local.id}>
+                                            <td hidden>{local.id}</td>
+                                            <td>{local.nome}</td>
+                                            <td>{local.limite_idade}</td>
+                                            <td className='text-center'>
+                                                <div className="btn-group">
+                                                    <button type="button" className="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalLocal"
+                                                        onClick={() => handleEditar(local)}
+                                                    >Editar</button>
+                                                    <button type="button" className="btn btn-sm btn-outline-danger"
+                                                        onClick={() => handleDeletar(local.id)}
+                                                    >Deletar</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))
+                                )}
+                            </tbody>
+                        </table>
                     </div>
-                    <table className='table'>
-                        <thead>
-                            <tr>
-                                <th hidden>Id</th>
-                                <th>Local</th>
-                                <th>Idade mínima</th>
-                                <th className='text-center'>Editar/Deletar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {locais.length > 0 && (
-                                locais.map(local => (
-                                    <tr key={local.id}>
-                                        <td hidden>{local.id}</td>
-                                        <td>{local.nome}</td>
-                                        <td>{local.limite_idade}</td>
-                                        <td className='text-center'>
-                                            <div className="btn-group">
-                                                <button type="button" className="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalLocal"
-                                                    onClick={() => handleEditar(local)}
-                                                >Editar</button>
-                                                <button type="button" className="btn btn-sm btn-outline-danger"
-                                                    onClick={() => handleDeletar(local.id)}
-                                                >Deletar</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                ))
-                            )}
-                        </tbody>
-                    </table>
                 </div>
-
 
                 <div className="modal fade" id="modalLocal"
                     data-bs-keyboard="false"
@@ -132,6 +133,7 @@ export default function Menu() {
                             </div>
                             <div className="modal-body">
                                 <form onSubmit={handleSubmit}>
+
                                     <div className="mb-3" hidden>
                                         <label for="inputIdLocal" className="form-label">Id</label>
                                         <input type="text" name="id" className="form-control" id="inputIdLocal"
@@ -139,24 +141,28 @@ export default function Menu() {
                                             onChange={handleChangeValues}
                                         />
                                     </div>
-                                    <div className="mb-3">
-                                        <label for="inputNomeLocal" className="form-label">Nome</label>
+                                    <div className="form-floating mb-3">
                                         <input type="text" name="nome" className="form-control" id="inputNomeLocal"
                                             value={values.nome}
                                             onChange={handleChangeValues}
+                                            placeholder="Nome"
+                                            required
                                         />
-
+                                        <label for="inputNomeLocal">Nome</label>
                                     </div>
-                                    <div className="mb-3 col-6">
-                                        <label for="inputLimiteIdade" className="form-label">Limite mínimo de idade</label>
+
+                                    <div className="form-floating mb-3 col-6">
                                         <input type="number" name="limite_idade" className="form-control" id="inputLimiteIdade" min="0" max="99"
                                             value={values.limite_idade}
                                             onChange={handleChangeValues}
+                                            required
+                                            placeholder="Limite mínimo de idade"
                                         />
+                                        <label for="inputLimiteIdade">Limite mínimo de idade</label>
                                     </div>
                                     <div className="modal-footer">
-                                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                        <button type="submit" className="btn btn-primary">Salvar</button>
+                                        <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+                                        <button type="submit" className="btn btn-outline-primary">Salvar</button>
                                     </div>
 
                                 </form>

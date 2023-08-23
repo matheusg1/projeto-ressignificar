@@ -9,11 +9,12 @@ import AcompanhamentoNutricionalForm from './pages/acompanhamento-nutricional';
 import AtendimentoPresencial from './pages/locais';
 import Login from './pages/login';
 import Registro from './pages/registro';
+import Menu from './pages/menu';
 import { useAuth } from "../src/hooks/useAuth";
 
 export default function AppRoutes() {
     const { user } = useAuth();
-    
+
     return (
         <Routes>
             <Route path="*" element={<Navigate to="/" replace />} />
@@ -25,10 +26,13 @@ export default function AppRoutes() {
             <Route path="/acompanhamento-nutricional" element={<AcompanhamentoNutricionalForm />} />
             <Route path="/dar-feedback" element={<Feedback />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/registro" element={<Registro />} />
+            <Route
+                path="/menu"
+                element={user ? <Menu /> : <Navigate to="/login" replace />}
+            />
             <Route
                 path="/registro"
-                element={!user ? <Registro /> : <Navigate to="/login" replace />}
+                element={user ? <Registro /> : <Navigate to="/login" replace />}
             />
         </Routes>
     );

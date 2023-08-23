@@ -6,19 +6,19 @@ import { supabase } from '../../services/apiServices'
 
 export default function Navbar() {
     const { user, setUser } = useAuth();
-    const userData = user ? user["data"]["user"] : null;
+    //const userData = user ? user["data"]["user"] : null;
 
     async function logout() {
         let { error } = await supabase.auth.signOut()
         if (!error) {
             alert('deslogado')
-            setUser()
+            setUser('')
         }
         else {
             console.log('falha ao deslogar')
         }
     }
-    
+
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-white">
             <div className="container-fluid">
@@ -57,8 +57,13 @@ export default function Navbar() {
                         <li className="nav-item">
                             <Link className="nav-link" to="/dar-feedback" >Dar feedback</Link>
                         </li>
+                        {user && (
+                            <li className="nav-item border-start border-white">
+                                <Link className="nav-link" to="/menu">Menu</Link>
+                            </li>
+                        )}
                         <li className="nav-item">
-                            {userData ? (
+                            {user ? (
                                 <Link className="nav-link" to="/login" onClick={logout}>Deslogar</Link>
                             ) : (
                                 <Link className="nav-link" to="/login">Login</Link>

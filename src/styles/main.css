@@ -82,12 +82,12 @@ body {
     height: 100vh;
     width: 640px;
 }
-
+/*
 .fade {
     opacity: 0;
     transition: var(--initial-transition);
 }
-
+*/
 .animate {
     opacity: 1 !important;
 }

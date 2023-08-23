@@ -4,9 +4,8 @@ import { useAuth } from "../../hooks/useAuth";
 
 export default function Login() {
 
-    const { user, setUser } = useAuth();
-    const userData = user ? user["data"]["user"] : null;
-
+    const { user, setUser } = useAuth();    
+    
     const [values, setValues] = useState({
         email: "",
         password: ""
@@ -58,7 +57,7 @@ export default function Login() {
                     />
                 </div>
                 <button type="submit" className="btn btn-primary">Entrar</button>
-                {userData && (
+                {user && (
                     <button type="button" className="btn btn-danger">Usuario existe</button>
                 )}
             </div>

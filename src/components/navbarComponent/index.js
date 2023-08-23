@@ -2,20 +2,47 @@ import { React, useState, useEffect } from "react";
 import logoNavbar from '../../img/logo-navbar.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from "../../hooks/useAuth";
-import { supabase, MensagemSucesso } from '../../services/apiServices'
+import { supabase, MensagemErro } from '../../services/apiServices'
 
 export default function Navbar() {
-    const { user, setUser } = useAuth();    
+    const { user, setUser } = useAuth();
     const navigate = useNavigate();
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [borderMenu, setBorderMenu] = useState('');
+
+
+    const updateWindowWidth = () => {
+        setWindowWidth(window.innerWidth);
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', updateWindowWidth);
+
+        return () => {
+            window.removeEventListener('resize', updateWindowWidth);
+        };
+    }, []);
+
+
+    useEffect(() => {
+        if (windowWidth >= 992) {
+            setBorderMenu('border-start border-white');
+            return;
+        }
+
+        setBorderMenu('');
+
+    }, [windowWidth]);
 
     async function logout() {
         let { error } = await supabase.auth.signOut()
-        if (!error) {            
+        
+        if (!error) {
             setUser('')
             navigate('/login');
         }
         else {
-            //tratar 
+            MensagemErro("Falha ao deslogar")
         }
     }
 
@@ -58,7 +85,7 @@ export default function Navbar() {
                             <Link className="nav-link" to="/dar-feedback" >Dar feedback</Link>
                         </li>
                         {user && (
-                            <li className="nav-item border-start border-white">
+                            <li className={`nav-item ${borderMenu}`} >
                                 <Link className="nav-link" to="/menu">Menu</Link>
                             </li>
                         )}
@@ -72,7 +99,6 @@ export default function Navbar() {
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav >
     );
 }
-

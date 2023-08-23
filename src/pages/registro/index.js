@@ -45,9 +45,9 @@ export default function Registro() {
     }
 
     return (
-        <form className="d-flex justify-content-center align-items-center col-12 col-sm-12 flex-fill"
+        <form className="d-flex justify-content-center align-items-center flex-fill"
             onSubmit={handleSubmit}>
-            <div className="my-auto p-4 form-card rounded-1">
+            <div className="my-auto p-4 col-12 col-sm-8 col-md-6 col-lg-5 col-xl-3 form-card rounded-1">
                 <div className="form-floating mb-3">
                     <input type="email" className="form-control" id="InputEmail"
                         required

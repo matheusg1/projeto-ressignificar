@@ -108,14 +108,14 @@ export function MensagemSucesso(mensagem) {
     });
 }
 
-export function MensagemErro(mensagem) {
+export function MensagemErro(mensagem, reload = true) {
     Swal.fire({
         icon: 'error',
         title: mensagem,
         //text: 'Ocorreu um erro'
     }).then((result) => {
-        if (result.isConfirmed) {
-            document.location.reload(true);
+        if (result.isConfirmed && reload) {
+            document.location.reload(false);
         }
     });
 }

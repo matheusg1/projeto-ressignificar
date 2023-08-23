@@ -1,21 +1,14 @@
 import { useState } from 'react';
 import { supabase, MensagemSucesso, MensagemErro } from '../../services/apiServices'
 import { useAuth } from "../../hooks/useAuth";
-import { useNavigate  } from 'react-router-dom';
 
 export default function Registro() {
     const { user, setUser } = useAuth();
 
-    const navigate = useNavigate();
-
-    /*if(user){
-        navigate('/login')
-    }*/
-
     const [values, setValues] = useState({
         email: "",
         password: "",
-        //passwordConfirm: ""
+        passwordConfirm: ""
     })
 
     const handleChangeValues = (e) => {
@@ -32,6 +25,10 @@ export default function Registro() {
         if(!values.email || !values.password){
             return;
         }
+        if(values.password != values.passwordConfirm){
+            MensagemErro("As senhas não coincidem.", false);
+            return;
+        }
 
         let { data, error } = await supabase.auth.signUp({
             email: values.email,
@@ -39,7 +36,6 @@ export default function Registro() {
         })        
 
         if (error) {
-            //tratar
             MensagemErro("Erro ao cadastrar usuário");
             return;
         }
@@ -71,6 +67,16 @@ export default function Registro() {
                         placeholder="Senha"
                     />
                     <label for="InputSenha">Senha</label>
+                </div>
+                <div className="form-floating mb-3">
+                    <input type="passwordConfirm" className="form-control" id="InputConfirmaSenha"
+                        required
+                        name="passwordConfirm"
+                        onChange={handleChangeValues}
+                        value={values.passwordConfirm}
+                        placeholder="Confirmar senha"
+                    />
+                    <label for="InputConfirmaSenha">Confirmar Senha</label>
                 </div>
                 <button type="submit" className="btn btn-lg btn-outline-primary w-100 rounded-2">Cadastrar</button>
             </div>

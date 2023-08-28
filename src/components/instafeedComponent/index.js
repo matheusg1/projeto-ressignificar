@@ -55,7 +55,13 @@ export default function InstaFeed() {
                                     <p className="fs-6 fw-semibold my-3">
                                         <a key={item.id} href={item.permalink} target="_blank" className={`${styles.item} text-black`}>Projeto Ressignificar</a>
                                     </p>
-                                    <a href=""><img className='mb-1' src={logoInstagram} height="16px"></img></a>
+                                    <a href="">
+                                        <img className='mb-1'
+                                            src={logoInstagram}
+                                            alt="Ícone com logo do Instagram"
+                                            height="16px">
+                                        </img>
+                                    </a>
                                 </div>
                                 <p className="fs-6 fw-normal ">{abreviaLegenda(item.caption)}</p>
                             </div>

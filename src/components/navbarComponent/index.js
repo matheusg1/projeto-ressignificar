@@ -36,7 +36,7 @@ export default function Navbar() {
 
     async function logout() {
         let { error } = await supabase.auth.signOut()
-        
+
         if (!error) {
             setUser('')
             navigate('/login');
@@ -49,10 +49,12 @@ export default function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-white">
             <div className="container-fluid">
-                <Link to="/">
-                    <img id="img-logo" className="ms-lg-4" src={logoNavbar} alt="Logotipo do projeto, desenho de uma lâmpada com uma borboleta sobreposta" />
+                <Link to="/" className="navbar-brand d-flex align-items-center">
+                    <img id="img-logo" className="ms-lg-4" 
+                    src={logoNavbar} 
+                    alt="Logotipo do projeto, desenho de uma lâmpada com uma borboleta sobreposta" />
+                    <h1 className="fw-normal fs-5 ps-lg-3 align-self-center mb-0">Projeto Ressignificar</h1>
                 </Link>
-                <h1><Link className="navbar-brand ps-lg-3" to="/">Projeto Ressignificar</Link></h1>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

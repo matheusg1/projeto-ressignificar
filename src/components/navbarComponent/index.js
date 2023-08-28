@@ -49,7 +49,7 @@ export default function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-white">
             <div className="container-fluid">
-                <Link>
+                <Link to="/">
                     <img id="img-logo" className="ms-lg-4" src={logoNavbar} alt="Logotipo do projeto, desenho de uma lâmpada com uma borboleta sobreposta" />
                 </Link>
                 <h1><Link className="navbar-brand ps-lg-3" to="/">Projeto Ressignificar</Link></h1>

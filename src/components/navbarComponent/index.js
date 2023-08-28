@@ -52,7 +52,7 @@ export default function Navbar() {
                 <Link>
                     <img id="img-logo" className="ms-lg-4" src={logoNavbar} alt="Logotipo do projeto, desenho de uma lâmpada com uma borboleta sobreposta" />
                 </Link>
-                <Link className="navbar-brand ps-lg-3" to="/">Projeto Ressignificar</Link>
+                <h1><Link className="navbar-brand ps-lg-3" to="/">Projeto Ressignificar</Link></h1>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

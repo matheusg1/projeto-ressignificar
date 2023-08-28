@@ -16,7 +16,7 @@ export default function About() {
                 <div className="container-fluid pb-3 col-12 col-lg-10">
                     <div
                         className="d-flex justify-content-between flex-column flex-sm-row pt-3 pb-1 px-3 glass">
-                        <h2 className="fs-2 fw-bold about-topic pe-5 me-5 w-25">Objetivo</h2>
+                        <h3 className="fs-2 fw-bold about-topic pe-5 me-5 w-25">Objetivo</h3>
                         <div className="d-md-block fs-5 my-3 my-sm-0 w-100 about-topic-content">
                             <p className="">O objetivo do Projeto Ressignificar é proporcionar acesso a atendimentos psicológicos de
                                 acordo com as
@@ -34,9 +34,9 @@ export default function About() {
                     <div
                         className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-4 p-3 glass">
                         <div className="w-25 pe-5 me-5">
-                            <h2 className="fs-2 fw-bold about-topic">Como</h2>
-                            <h2 className="fs-2 fw-bold about-topic text-nowrap">o projeto</h2>
-                            <h2 className="fs-2 fw-bold about-topic">iniciou?</h2>
+                            <h3 className="fs-2 fw-bold about-topic">Como</h3>
+                            <h3 className="fs-2 fw-bold about-topic text-nowrap">o projeto</h3>
+                            <h3 className="fs-2 fw-bold about-topic">iniciou?</h3>
                         </div>
                         <div className="d-md-block fs-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0 my-xxl-0 w-100 about-topic-content">
                             <p className="">
@@ -52,8 +52,8 @@ export default function About() {
                     <div
                         className="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row my-4 p-3 glass">
                         <div className="w-25 pe-5 me-5">
-                            <h2 className="fs-2 fw-bold about-topic">Como</h2>
-                            <h2 className="fs-2 fw-bold about-topic">funciona?</h2>
+                            <h3 className="fs-2 fw-bold about-topic">Como</h3>
+                            <h3 className="fs-2 fw-bold about-topic">funciona?</h3>
                         </div>
 
                         <div className="d-md-block fs-5 my-3 my-sm-0 my-md-0 my-lg-0 my-xl-0 my-xxl-0 w-100 about-topic-content">

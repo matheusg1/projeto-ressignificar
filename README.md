@@ -5,6 +5,7 @@ Site que desenvolvi para o Projeto **Ressignificar**, que oferece acompanhamento
  
  - [x] Design minimalista e padronizado
  - [x] Adaptável a diferentes dispositivos e tamanhos de tela
+ - [x] Acessível, aprimorado para leitores de tela
  - [x] Seleção de cores baseada no <a href="https://www.instagram.com/pro.ressignificar/"> Instagram do Projeto</a>
 
 ---

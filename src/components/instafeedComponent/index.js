@@ -29,7 +29,7 @@ export default function InstaFeed() {
             const { data } = await axios.get(url);
             setFeedList(data.data);
         } catch (error) {
-            console.log(error)
+            //console.log(error)
         }
     }
 
@@ -80,7 +80,7 @@ export default function InstaFeed() {
                     {[...Array(8)].map(() =>
                         <div className={`${styles.item} rounded-3 shadow fade-post opacity-50`}>
                             <a href="https://www.instagram.com/pro.ressignificar" target="_blank">
-                                <img src={imgPlaceholder} alt="Imagem do Instagram do Projeto Ressignificar" />
+                                <img className='w-100' src={imgPlaceholder} alt="Imagem de carregamento" />
                             </a>
                             <div className='d-flex flex-column px-3 py-3'>
                                 <p aria-hidden="true">

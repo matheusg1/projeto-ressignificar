@@ -9,11 +9,11 @@ export default function Index() {
         <>
             <HelmetComponent title="Início" />
             <Fade />
-            <div className="fade">
+         
                 <Title title="Nossos posts" />
                 <div id="instafeed" className=""></div>
                 <Instafeed />
-            </div>
+        
         </>
     )
 }

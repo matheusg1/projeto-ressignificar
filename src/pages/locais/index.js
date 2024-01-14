@@ -3,24 +3,16 @@ import Fade from '../../components/fadeComponent';
 import TitleComponent from '../../components/titleComponent';
 import HelmetComponent from '../../components/helmetComponent';
 import ItemLocalAtendimento from '../../components/itemLocalAtendimentoPresencial';
-import { RecebeLocais } from '../../services/apiServices';
+import locaisData from '../../data/locaisData.js'
 
 export default function AtendimentoPresencial() {
 
-    const [locais, setLocais] = useState([]);
+    const [locais,setLocais] = useState([]);
 
     useEffect(() => {
-        async function fetchLocais() {
-            try {
-                const locaisResponse = await RecebeLocais();
-                setLocais(locaisResponse);
-            } catch (error) {
-                console.error('Erro ao buscar locais:', error);
-            }
-        }
-        fetchLocais();
+        setLocais(locaisData)
     }, []);
-
+        
     return (
         <>
             <HelmetComponent title="Locais" />
@@ -33,7 +25,7 @@ export default function AtendimentoPresencial() {
                                 <ItemLocalAtendimento
                                     key={local.id}
                                     local={local.nome}
-                                    idadeMinima={`acima de ${local.limite_idade} anos`}
+                                    idadeMinima={`acima de ${local.idadeMinima} anos`}
                                 />
                             ))
                         ) : (

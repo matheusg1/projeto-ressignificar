@@ -7,13 +7,8 @@ import AcompanhamentoPsicologicoForm from './pages/acompanhamento-psicologico';
 import AcompanhamentoPsiquiatricoForm from './pages/acompanhamento-psiquiatrico';
 import AcompanhamentoNutricionalForm from './pages/acompanhamento-nutricional';
 import AtendimentoPresencial from './pages/locais';
-import Login from './pages/login';
-import Registro from './pages/registro';
-import Menu from './pages/menu';
-import { useAuth } from "../src/hooks/useAuth";
 
 export default function AppRoutes() {
-    const { user } = useAuth();
 
     return (
         <Routes>
@@ -25,16 +20,6 @@ export default function AppRoutes() {
             <Route path="/acompanhamento-psiquiatrico" element={<AcompanhamentoPsiquiatricoForm />} />
             <Route path="/acompanhamento-nutricional" element={<AcompanhamentoNutricionalForm />} />
             <Route path="/dar-feedback" element={<Feedback />} />            
-            <Route path="/login" element={<Login />} />            
-
-            <Route
-                path="/menu"
-                element={user ? <Menu /> : <Navigate to="/login" replace />}
-            />
-            <Route
-                path="/registro"
-                element={user ? <Registro /> : <Navigate to="/login" replace />}
-            />
         </Routes>
     );
 }

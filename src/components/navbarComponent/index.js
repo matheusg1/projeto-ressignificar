@@ -1,11 +1,8 @@
 import { React, useState, useEffect } from "react";
 import logoNavbar from '../../img/logo-navbar.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from "../../hooks/useAuth";
-import { supabase, MensagemErro } from '../../services/apiServices'
 
 export default function Navbar() {
-    const { user, setUser } = useAuth();
     const navigate = useNavigate();
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [borderMenu, setBorderMenu] = useState('');
@@ -33,18 +30,6 @@ export default function Navbar() {
         setBorderMenu('');
 
     }, [windowWidth]);
-
-    async function logout() {
-        let { error } = await supabase.auth.signOut()
-
-        if (!error) {
-            setUser('')
-            navigate('/login');
-        }
-        else {
-            MensagemErro("Falha ao deslogar")
-        }
-    }
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-white">
@@ -85,19 +70,7 @@ export default function Navbar() {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/dar-feedback" >Dar feedback</Link>
-                        </li>
-                        {user && (
-                            <li className={`nav-item ${borderMenu}`} >
-                                <Link className="nav-link" to="/menu">Menu</Link>
-                            </li>
-                        )}
-                        <li className="nav-item">
-                            {user ? (
-                                <Link className="nav-link" to="/login" onClick={logout}>Deslogar</Link>
-                            ) : (
-                                <Link className="nav-link" to="/login">Login</Link>
-                            )}
-                        </li>
+                        </li>                                            
                     </ul>
                 </div>
             </div>

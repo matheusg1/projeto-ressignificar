@@ -21,15 +21,13 @@ export default function InstaFeed() {
 
     const [feedList, setFeedList] = useState([]);
 
-    async function getInstaFeed() {
-        const token = process.env.REACT_APP_INSTAGRAM_API_KEY;
-        const fields = "media_url,media_type,permalink,caption,children";
-        const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=${fields}&children&limit=12`;
+    async function getInstaFeed() {        
+        const url = 'https://projeto-ressignificar-api.vercel.app/instafeed/'
         try {
             const { data } = await axios.get(url);
-            setFeedList(data.data);
+            setFeedList(data);
         } catch (error) {
-            //console.log(error)
+            console.log(error)
         }
     }
 

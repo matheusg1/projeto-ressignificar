@@ -1,12 +1,11 @@
 import React from "react";
-import HelmetComponent from "../../components/helmetComponent";
 import TitleComponent from "../../components/titleComponent";
 import Fade from "../../components/fadeComponent"
 
 export default function Feedback() {
     return (
         <>
-            <HelmetComponent title="Dar feedback" />
+            {/* <HelmetComponent title="Dar feedback" /> */}
             <Fade />
             <div className="fade">
                 <TitleComponent title="Dar feedback" />

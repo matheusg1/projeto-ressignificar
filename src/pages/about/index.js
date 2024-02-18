@@ -3,13 +3,12 @@ import imgMayara from "../../img/mayara-img.webp"
 import imgLilian from "../../img/lilian-img.webp"
 import Fade from "../../components/fadeComponent";
 import TitleComponent from '../../components/titleComponent';
-import HelmetComponent from "../../components/helmetComponent";
 import CardIdealizadora from "../../components/cardIdealizadoraComponent";
 
 export default function About() {
     return (
         <>
-            <HelmetComponent title="Sobre nós" />
+            {/* <HelmetComponent title="Sobre nós" /> */}
             <Fade />
             <div className="fade">
                 <TitleComponent title="Sobre nós" />

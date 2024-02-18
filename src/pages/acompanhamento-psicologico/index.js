@@ -1,12 +1,11 @@
 import React from "react";
-import HelmetComponent from "../../components/helmetComponent";
 import TitleComponent from "../../components/titleComponent";
 import Fade from "../../components/fadeComponent";
 
 export default function AcompanhamentoPsicologicoForm() {
     return (
         <>
-            <HelmetComponent title="Acompanhamento psicológico" />
+            {/* <HelmetComponent title="Acompanhamento psicológico" /> */}
             <Fade />
             <div className="fade">
                 <TitleComponent title="Assistência psicológica" />

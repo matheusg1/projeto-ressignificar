@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Fade from '../../components/fadeComponent';
 import TitleComponent from '../../components/titleComponent';
-import HelmetComponent from '../../components/helmetComponent';
 import ItemLocalAtendimento from '../../components/itemLocalAtendimentoPresencial';
 import locaisData from '../../data/locaisData.js'
 
@@ -15,7 +14,7 @@ export default function AtendimentoPresencial() {
         
     return (
         <>
-            <HelmetComponent title="Locais" />
+            {/* <HelmetComponent title="Locais" /> */}
             <div className="d-flex flex-column flex-fill">
                 <TitleComponent title="Locais com atendimento presencial" />
                 <div className="container-md pb-3 my-auto">

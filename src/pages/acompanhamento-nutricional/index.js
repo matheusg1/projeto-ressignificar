@@ -1,12 +1,11 @@
 import React from "react";
-import HelmetComponent from "../../components/helmetComponent";
 import TitleComponent from "../../components/titleComponent";
 import Fade from "../../components/fadeComponent";
 
 export default function AcompanhamentoNutricionalForm() {
     return (
         <>
-            <HelmetComponent title="Acompanhamento nutricional" />
+            {/* <HelmetComponent title="Acompanhamento nutricional" /> */}
             <Fade />
             <div className="fade">
                 <TitleComponent title="Assistência nutricional" />

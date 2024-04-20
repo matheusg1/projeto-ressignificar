@@ -32,7 +32,7 @@ export default function Navbar() {
     }, [windowWidth]);
 
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-white">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
                 <Link to="/" className="navbar-brand d-flex align-items-center">
                     <img id="img-logo" className="ms-lg-4" 
@@ -47,7 +47,7 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/sobre">Sobre</Link>
+                            <Link className="nav-link" to="/">Início</Link>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -67,6 +67,9 @@ export default function Navbar() {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/atendimento-presencial">Locais</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/posts">Nossos posts</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/dar-feedback" >Dar feedback</Link>

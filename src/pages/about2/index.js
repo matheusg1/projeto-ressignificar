@@ -4,14 +4,32 @@ import imgLilian from "../../img/lilian-img.webp"
 import Fade from "../../components/fadeComponent";
 import TitleComponent from '../../components/titleComponent';
 import CardIdealizadora from "../../components/cardIdealizadoraComponent";
+import { Link } from "react-router-dom";
 
-export default function About() {
+export default function Inicio() {
     return (
         <>
             {/* <HelmetComponent title="Sobre nós" /> */}
             <Fade />
             <div className="fade">
-                <TitleComponent title="Sobre nós" />
+                <div className="parallax mb-5 d-flex flex-column">
+                    <TitleComponent title="Projeto Ressignificar" />
+                    <div id="div-quote" className='d-flex flex-column justify-content-center col-12'>
+                        <blockquote id="quote" className="col-11 col-md-9 col-lg-6 fs-4 text-white align-self-center">
+                            O objetivo do Projeto Ressignificar é proporcionar acesso a atendimentos psicológicos de
+                            acordo com as
+                            condições socioeconômicas de cada paciente. Assim sendo, o projeto vem com o intuito de facilitar o acesso à
+                            atendimentos psicológicos, tornando possível a oportunidade de cuidar da saúde mental.
+                            {/* <cite>Somebody famous</cite> */}
+                        </blockquote>
+                    </div>
+                    <div className="links-atendimento d-flex flex-column flex-md-row justify-content-center mb-5 gap-5">
+                        <Link className="link-item fs-5 text-white" to="/acompanhamento-psicologico" >Acompanhamento psicológico</Link>
+                        <Link className="link-item fs-5 text-white" to="/acompanhamento-psicologico" >Acompanhamento psiquiátrico</Link>
+                        <Link className="link-item fs-5 text-white" to="/acompanhamento-psicologico" >Acompanhamento nutricional</Link>
+                    </div>
+                </div>
+
                 <div className="container-fluid pb-3 col-12 col-lg-10">
                     <div
                         className="d-flex justify-content-between flex-column flex-sm-row pt-3 pb-1 px-3 glass">

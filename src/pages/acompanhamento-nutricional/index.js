@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TitleComponent from "../../components/titleComponent";
 import Fade from "../../components/fadeComponent";
 
 export default function AcompanhamentoNutricionalForm() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+    
     return (
         <>
             {/* <HelmetComponent title="Acompanhamento nutricional" /> */}

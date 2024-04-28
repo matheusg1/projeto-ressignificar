@@ -7,8 +7,9 @@ import locaisData from '../../data/locaisData.js'
 export default function AtendimentoPresencial() {
 
     const [locais,setLocais] = useState([]);
-
+    
     useEffect(() => {
+        window.scrollTo(0, 0)
         setLocais(locaisData)
     }, []);
         

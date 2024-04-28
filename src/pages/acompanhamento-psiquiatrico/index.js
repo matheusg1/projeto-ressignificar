@@ -8,7 +8,7 @@ export default function AcompanhamentoPsiquiatricoForm() {
         {/* <HelmetComponent title="Acompanhamento psiquiátrico"/> */}
         <Fade />
             <div className="fade">
-        <TitleComponent title="Assistência psiquiátrica"/>
+        <TitleComponent title="Assistência psiquiátrica" className="primary-blue"/>
             <div className="col-12 d-flex justify-content-center mt-sm-5 mt-md-5 mt-lg-5 mt-xl-5 mt-xxl-5">
                 <iframe
                     src="https://docs.google.com/forms/d/1BqiUmS-lYi-HgTCeRXZccl--mdwFPC1ay7MuwZzHkGU/viewform?embedded=true"

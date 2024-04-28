@@ -16,7 +16,7 @@ export default function AtendimentoPresencial() {
         <>
             {/* <HelmetComponent title="Locais" /> */}
             <div className="d-flex flex-column flex-fill">
-                <TitleComponent title="Locais com atendimento presencial" />
+                <TitleComponent title="Locais com atendimento presencial" className="primary-blue" />
                 <div className="container-md pb-3 my-auto">
                     <div className="display-6">
                         {locais.length > 0 ? (

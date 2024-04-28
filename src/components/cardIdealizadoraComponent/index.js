@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function CardIdealizadora({img, nome, crp, titulo, descricao}) {
+export default function CardIdealizadora({img, nome, crp, titulo, descricao, className}) {
     return (
         <>
-            <div className="py-4 px-3 d-flex flex-column col-sm-10 col-md-5 col-lg-5 col-xl-5 col-xxl-4 shadow-sm about-card">
+            <div className={`py-4 px-3 px-lg-5 d-flex flex-column col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-4 shadow-sm about-card ${className}`}>
                 <img className="rounded-circle align-self-center mb-3"
                     width="189px"
                     src={img}

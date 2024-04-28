@@ -11,7 +11,7 @@ export default function About() {
             {/* <HelmetComponent title="Sobre nós" /> */}
             <Fade />
             <div className="fade">
-                <TitleComponent title="Sobre nós" />
+                <TitleComponent title="Sobre nós" className="primary-blue" />
                 <div className="container-fluid pb-3 col-12 col-lg-10">
                     <div
                         className="d-flex justify-content-between flex-column flex-sm-row pt-3 pb-1 px-3 glass">

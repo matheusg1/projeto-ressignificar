@@ -8,7 +8,7 @@ export default function Feedback() {
             {/* <HelmetComponent title="Dar feedback" /> */}
             <Fade />
             <div className="fade">
-                <TitleComponent title="Dar feedback" />
+                <TitleComponent title="Dar feedback" className="primary-blue"/>
                 <div className="col-12 d-flex justify-content-center">
                     <iframe
                         src="https://docs.google.com/forms/d/13RXKo-IWKmwJW_TpcBDb0jJXo3XG2kuxCNF00uwVkzA/viewform?embedded=true"

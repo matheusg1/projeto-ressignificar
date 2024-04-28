@@ -13,9 +13,9 @@ export default function Inicio() {
             <Fade />
             <div className="fade">
                 <div className="parallax mb-5 d-flex flex-column">
-                    <TitleComponent title="Projeto Ressignificar" />
+                    <TitleComponent title="Projeto Ressignificar" className="light-blue shadow-custom" />
                     <div id="div-quote" className='d-flex flex-column justify-content-center col-12'>
-                        <blockquote id="quote" className="col-11 col-md-9 col-lg-6 fs-4 text-white align-self-center">
+                        <blockquote id="quote" className="col-12 col-md-12 col-lg-11 col-xxl-6  fs-4 text-white align-self-center">
                             O objetivo do Projeto Ressignificar é proporcionar acesso a atendimentos psicológicos de
                             acordo com as
                             condições socioeconômicas de cada paciente. Assim sendo, o projeto vem com o intuito de facilitar o acesso à
@@ -23,10 +23,10 @@ export default function Inicio() {
                             {/* <cite>Somebody famous</cite> */}
                         </blockquote>
                     </div>
-                    <div className="links-atendimento d-flex flex-column flex-md-row justify-content-center mb-5 gap-5">
-                        <Link className="link-item fs-5 text-white" to="/acompanhamento-psicologico" >Acompanhamento psicológico</Link>
-                        <Link className="link-item fs-5 text-white" to="/acompanhamento-psicologico" >Acompanhamento psiquiátrico</Link>
-                        <Link className="link-item fs-5 text-white" to="/acompanhamento-psicologico" >Acompanhamento nutricional</Link>
+                    <div className="links-atendimento d-flex flex-column text-center flex-md-row justify-content-center mb-5 mx-2 gap-md-5">
+                        <Link className="link-item fs-5 text-white my-2 my-md-0" to="/acompanhamento-psicologico" >Acompanhamento psicológico</Link>
+                        <Link className="link-item fs-5 text-white my-2 my-md-0" to="/acompanhamento-psicologico" >Acompanhamento psiquiátrico</Link>
+                        <Link className="link-item fs-5 text-white my-2 my-md-0" to="/acompanhamento-psicologico" >Acompanhamento nutricional</Link>
                     </div>
                 </div>
 
@@ -94,13 +94,14 @@ export default function Inicio() {
                 </div>
 
                 <div
-                    className="container-fluid d-flex justify-content-evenly flex-column flex-sm-column align-items-sm-center align-items-md-stretch flex-md-row mx-auto col-sm-12 col-md-11 col-lg-11 col-xl-10 col-xxl-8">
+                    className="container-fluid d-flex justify-content-between flex-column flex-sm-column align-items-sm-center align-items-md-stretch flex-md-row mx-auto col-12 col-lg-10">
 
                     <CardIdealizadora img={imgMayara}
                         nome="Mayara de Sousa dos S. Machado"
                         crp="CRP 08/28214"
                         titulo="Idealizadora e coordenadora"
-                        descricao="Formada em psicologia desde 2018, atuando na clínica desde então. Fundou o Projeto Ressignificar por acreditar no valor e na importância da psicologia." />
+                        descricao="Formada em psicologia desde 2018, atuando na clínica desde então. Fundou o Projeto Ressignificar por acreditar no valor e na importância da psicologia."
+                        className="ms-0 ms-xxl-5" />
 
                     <div className="mt-5 mt-sm-5 mt-md-0"></div>
 
@@ -110,6 +111,7 @@ export default function Inicio() {
                         crp="CRP 08/28674"
                         titulo="Idealizadora e coordenadora"
                         descricao="Formada em psicologia desde 2018, atuando na clínica desde então. Fundou o Projeto Ressignificar com o intuito de levar a psicologia para todos, independente das condições socioeconômicas."
+                        className="me-0 me-xxl-5"
                     />
                 </div>
             </div>

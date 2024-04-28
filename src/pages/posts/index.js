@@ -8,7 +8,7 @@ export default function Posts() {
         <>
             {/* <HelmetComponent title="Início" /> */}
             <Fade />         
-                <Title title="Nossos posts" />
+                <Title title="Nossos posts" className="primary-blue"/>
                 <div id="instafeed" className=""></div>
                 <Instafeed />
         

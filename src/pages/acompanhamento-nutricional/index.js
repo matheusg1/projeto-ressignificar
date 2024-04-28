@@ -8,7 +8,7 @@ export default function AcompanhamentoNutricionalForm() {
             {/* <HelmetComponent title="Acompanhamento nutricional" /> */}
             <Fade />
             <div className="fade">
-                <TitleComponent title="Assistência nutricional" />
+                <TitleComponent title="Assistência nutricional" className="primary-blue"/>
                 <div className="col-12 d-flex justify-content-center">
                     <iframe
                         src="https://docs.google.com/forms/d/11gyroLHZUaHRjB7C0Wbqy8I6aE3mzg9wGw8hAcTRwJg/viewform?embedded=true"

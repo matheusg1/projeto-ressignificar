@@ -25,8 +25,8 @@ export default function Inicio() {
                     </div>
                     <div className="links-atendimento d-flex flex-column text-center flex-md-row justify-content-center mb-5 mx-2 gap-md-5">
                         <Link className="link-item fs-5 text-white my-2 my-md-0" to="/acompanhamento-psicologico" >Acompanhamento psicológico</Link>
-                        <Link className="link-item fs-5 text-white my-2 my-md-0" to="/acompanhamento-psicologico" >Acompanhamento psiquiátrico</Link>
-                        <Link className="link-item fs-5 text-white my-2 my-md-0" to="/acompanhamento-psicologico" >Acompanhamento nutricional</Link>
+                        <Link className="link-item fs-5 text-white my-2 my-md-0" to="/acompanhamento-psiquiatrico" >Acompanhamento psiquiátrico</Link>
+                        <Link className="link-item fs-5 text-white my-2 my-md-0" to="/acompanhamento-nutricional" >Acompanhamento nutricional</Link>
                     </div>
                 </div>
 

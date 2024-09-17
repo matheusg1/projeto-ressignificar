@@ -58,11 +58,14 @@ export default function Navbar() {
                                 <li><Link className="dropdown-item" to="/acompanhamento-psicologico" >Acompanhamento psicológico</Link>
                                 </li>
                                 <li>
+                                    <Link className="dropdown-item" to="/psicoterapia-casal" >Psicoterapia de casal</Link>
+                                </li>
+                                <li>
                                     <Link className="dropdown-item" to="/acompanhamento-psiquiatrico" >Acompanhamento psiquiátrico</Link>
                                 </li>
                                 <li>
                                     <Link className="dropdown-item" to="/acompanhamento-nutricional" >Acompanhamento nutricional</Link>
-                                </li>
+                                </li>                                
                             </ul>
                         </li>
                         <li className="nav-item">

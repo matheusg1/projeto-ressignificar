@@ -8,6 +8,7 @@ import AtendimentoPresencial from './pages/locais';
 import Posts from './pages/posts';
 import Inicio from './pages/index';
 import PsicoterapiaCasalForm from './pages/psicoterapia-casal';
+import AvaliacaoPsicologicaForm from './pages/avaliacao-psicologica';
 
 export default function AppRoutes() {
 
@@ -19,11 +20,12 @@ export default function AppRoutes() {
             {/* <Route path="/sobre2" element={<About2 />} /> */}
             <Route path="/posts" element={<Posts />} />
             <Route path="/atendimento-presencial" element={<AtendimentoPresencial />} />
+            <Route path="/avaliacao-psicologica" element={<AvaliacaoPsicologicaForm />} />
             <Route path="/acompanhamento-psicologico" element={<AcompanhamentoPsicologicoForm />} />
             <Route path="/acompanhamento-psiquiatrico" element={<AcompanhamentoPsiquiatricoForm />} />
             <Route path="/acompanhamento-nutricional" element={<AcompanhamentoNutricionalForm />} />
             <Route path="/psicoterapia-casal" element={<PsicoterapiaCasalForm />} />
-            <Route path="/dar-feedback" element={<Feedback />} />            
+            <Route path="/dar-feedback" element={<Feedback />} />
         </Routes>
     );
 }

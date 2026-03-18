@@ -11,7 +11,6 @@ export default function AcompanhamentoPsicologicoForm() {
 
     return (
         <>
-            {/* <HelmetComponent title="Acompanhamento psicológico" /> */}
             <Fade />
             <div className="fade">
                 <TitleComponent title="Assistência psicológica" className="primary-blue"/>

@@ -74,17 +74,9 @@ export default function Navbar() {
                 <li>
                   <Link
                     className="dropdown-item"
-                    to="/avaliacao-psicologica"
-                  >
-                    Avaliacao psicológica
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="dropdown-item"
                     to="/acompanhamento-psicologico"
                   >
-                    Acompanhamento psicológico
+                    Terapia Acompanhamento psicológico
                   </Link>
                 </li>
                 <li>
@@ -106,6 +98,11 @@ export default function Navbar() {
                     to="/acompanhamento-nutricional"
                   >
                     Acompanhamento nutricional
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/avaliacao-psicologica">
+                    Avaliação psicológica
                   </Link>
                 </li>
               </ul>

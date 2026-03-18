@@ -47,15 +47,9 @@ export default function Inicio() {
           >
             <Link
               className="link-item d-flex align-items-center justify-content-center col-10 col-sm-7 col-md-4 col-lg-3 fs-5 text-white my-0 my-md-2"
-              to="/avaliacao-psicologica"
-            >
-              Avaliação psicológica
-            </Link>
-            <Link
-              className="link-item d-flex align-items-center justify-content-center col-10 col-sm-7 col-md-4 col-lg-3 fs-5 text-white my-0 my-md-2"
               to="/acompanhamento-psicologico"
             >
-              Acompanhamento psicológico
+              Terapia Acompanhamento psicológico
             </Link>
             <Link
               className="link-item d-flex align-items-center justify-content-center col-10 col-sm-7 col-md-4 col-lg-3 fs-5 text-white my-0 my-md-2"
@@ -74,6 +68,12 @@ export default function Inicio() {
               to="/acompanhamento-nutricional"
             >
               Acompanhamento nutricional
+            </Link>
+            <Link
+              className="link-item d-flex align-items-center justify-content-center col-10 col-sm-7 col-md-4 col-lg-3 fs-5 text-white my-0 my-md-2"
+              to="/avaliacao-psicologica"
+            >
+              Avaliação psicológica
             </Link>
           </div>
         </div>

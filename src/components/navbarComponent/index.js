@@ -76,7 +76,7 @@ export default function Navbar() {
                     className="dropdown-item"
                     to="/acompanhamento-psicologico"
                   >
-                    Terapia Acompanhamento psicológico
+                    Psicoterapia
                   </Link>
                 </li>
                 <li>

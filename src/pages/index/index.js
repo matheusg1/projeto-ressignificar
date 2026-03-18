@@ -49,7 +49,7 @@ export default function Inicio() {
               className="link-item d-flex align-items-center justify-content-center col-10 col-sm-7 col-md-4 col-lg-3 fs-5 text-white my-0 my-md-2"
               to="/acompanhamento-psicologico"
             >
-              Terapia Acompanhamento psicológico
+              Psicoterapia
             </Link>
             <Link
               className="link-item d-flex align-items-center justify-content-center col-10 col-sm-7 col-md-4 col-lg-3 fs-5 text-white my-0 my-md-2"

@@ -105,6 +105,11 @@ export default function Navbar() {
                     Avaliação psicológica
                   </Link>
                 </li>
+                 <li>
+                  <Link className="dropdown-item" to="/contratacao-palestras">
+                    Contratação de palestras
+                  </Link>
+                </li>
               </ul>
             </li>
             <li className="nav-item">
